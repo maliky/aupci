@@ -1,4 +1,7 @@
-Instruction pour recréer le site web en local.
+#+LANGUAGE: fr
+#+OPTIONS: H:2 toc:t num:t author:nil title:nil date:nil
+
+Instructions pour recréer le site web en local.
 
 * Gestion de Python
   Afin d'éviter des conflits avec les applications python utilisé par l'OS il est bien d'installer ==pyenv== qui permet de gérer en parallèle différentes version de python.
@@ -118,7 +121,7 @@ Pour la prise en main de django je propose de vous attribuer chacun la responsab
  Accessible à aup.ci/evenement
 **** Page "Qui Sommes-nous" @Atta
  Accessible à aup.ci/qui-somme-nous    
-**** Page "Contact" @Gnimansoun
+**** Page "Contact" @Gnimanssoun
  Accessible à aup.ci/contact    
 **** Page "Adhésion" @Kopoin
  Accessible à aup.ci/contact    
