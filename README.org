@@ -100,6 +100,15 @@ Normalement le site web doit être accessible à l'adresse http://localhost:8000
 
 Il faut le rendre sembable à la maquette.
 
+* La maquette
+** Visualiser la maquette en locale
+#+BEGIN_SRC bash  -i
+cd maquette_website
+python -m http.server 8888
+#+END_SRC   
+
+Ouvrir votre navigateur à l'adresse indiquée (http://localhost:8888/)
+  
 * Répartition du travail
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier `maquette_website`
 

@@ -1,23 +1,26 @@
+
 # Table des matières
 
-1.  [Gestion de Python](#org910fed9)
-    1.  [Installer `pyenv`](#orgac147fe)
-    2.  [Installer python 3.8.2](#org822e229)
-2.  [Installation du site web](#orgf1df749)
-    1.  [Créer un environnement virtuel](#org98a1737)
-    2.  [Télécharger le code du site web](#org4220e36)
-    3.  [Installer les librairies pour le développement du site web](#orge6b5142)
-    4.  [Lancer le site web](#org0287517)
-3.  [Répartition du travail](#orgf5f7ff8)
-    1.  [Page "admin"](#org317a965)
-    2.  [Prise en main de django](#org74c328e)
-    3.  [Exploration flask @Adelph](#orgc20a7d7)
-4.  [Organisation du travail](#org2d27fd9)
+1.  [Gestion de Python](#orgc866873)
+    1.  [Installer `pyenv`](#org24938ae)
+    2.  [Installer python 3.8.2](#orgf409648)
+2.  [Installation du site web](#org160f129)
+    1.  [Créer un environnement virtuel](#org2d6321b)
+    2.  [Télécharger le code du site web](#org7c3a72f)
+    3.  [Installer les librairies pour le développement du site web](#orgdc35b1f)
+    4.  [Lancer le site web](#orge7a1302)
+3.  [La maquette](#org621b235)
+    1.  [Visualiser la maquette en locale](#org64f32bc)
+4.  [Répartition du travail](#orge6550e3)
+    1.  [Page "admin"](#org5027775)
+    2.  [Prise en main de django](#org2bdcb1f)
+    3.  [Exploration flask @Adelph](#org0f5f110)
+5.  [Organisation du travail](#org395bc76)
 
 Instructions pour recréer le site web en local.
 
 
-<a id="org910fed9"></a>
+<a id="orgc866873"></a>
 
 # Gestion de Python
 
@@ -25,7 +28,7 @@ Afin d'éviter des conflits avec les applications python utilisé par l'OS il es
 Par exemple, Ce website est créer avec `python 3.8.2` et vous devriez travailler avec la même version.
 
 
-<a id="orgac147fe"></a>
+<a id="org24938ae"></a>
 
 ## Installer `pyenv`
 
@@ -68,7 +71,7 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     Suivre les instructions de <https://github.com/pyenv-win/pyenv-win>
 
 
-<a id="org822e229"></a>
+<a id="orgf409648"></a>
 
 ## Installer python 3.8.2
 
@@ -79,12 +82,12 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     pyenv local 3.8.2
 
 
-<a id="orgf1df749"></a>
+<a id="org160f129"></a>
 
 # Installation du site web
 
 
-<a id="org98a1737"></a>
+<a id="org2d6321b"></a>
 
 ## Créer un environnement virtuel
 
@@ -96,7 +99,7 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     virtualenv .
 
 
-<a id="org4220e36"></a>
+<a id="org7c3a72f"></a>
 
 ## Télécharger le code du site web
 
@@ -111,7 +114,7 @@ Cela va créer un répertoire avec le suivi git.
     -   **rappel:** pour générer la pair de clefs utiliser `ssh-keygen`
 
 
-<a id="orge6b5142"></a>
+<a id="orgdc35b1f"></a>
 
 ## Installer les librairies pour le développement du site web
 
@@ -121,7 +124,7 @@ Cela va créer un répertoire avec le suivi git.
 Le fichier requirements.txt liste simplement les paquets python utilisés par notre projet.
 
 
-<a id="org0287517"></a>
+<a id="orge7a1302"></a>
 
 ## Lancer le site web
 
@@ -140,21 +143,40 @@ Le fichier requirements.txt liste simplement les paquets python utilisés par no
     Il faut le rendre sembable à la maquette.
 
 
-<a id="orgf5f7ff8"></a>
+<a id="org621b235"></a>
+
+# La maquette
+
+
+<a id="org64f32bc"></a>
+
+## Visualiser la maquette en locale
+
+    cd maquette_website
+    python -m http.server 8888
+
+Ouvrir votre navigateur à l'adresse indiquée (<http://localhost:8888/>)
+
+
+<a id="orge6550e3"></a>
 
 # Répartition du travail
 
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier \`maquette\_website\`
 
+Pour cela chacun de nous va créer une brange git pour y effectuer son travail.  *On verra plus tard comment merger le tout avec le site principal*
 
-<a id="org317a965"></a>
+    git checkout -b votrenom master
+
+
+<a id="org5027775"></a>
 
 ## Page "admin"
 
 localhost:8000/admin   -> point vers un portail d'administration installé par défaut mais dont nous n'avons pas besoin à moins de gérer divers profils d'utilisateurs
 
 
-<a id="org74c328e"></a>
+<a id="org2bdcb1f"></a>
 
 ## Prise en main de django
 
@@ -195,14 +217,14 @@ Pour la prise en main de django je propose de vous attribuer chacun la responsab
         C'est le dossier qui contient les templates appelé par les views.  On parle de templates, car il y a un mini langage pour par exemple faire un tableau html à partir d'un objet python list.  Et puis on peut réutiliser du code comme le fichier base.html (avec les headers)
 
 
-<a id="orgc20a7d7"></a>
+<a id="org0f5f110"></a>
 
 ## Exploration flask @Adelph
 
 Je propose que l'un d'entre nous regarde la possibilité de faire un site pour pycon par exemple avec flask.  On pourrait voir comment reproduire la page d'accueil de aupci avec flask.  C'est peut être plus simple et rapide à maîtriser.
 
 
-<a id="org2d27fd9"></a>
+<a id="org395bc76"></a>
 
 # Organisation du travail
 
