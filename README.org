@@ -103,6 +103,11 @@ Il faut le rendre sembable à la maquette.
 * Répartition du travail
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier `maquette_website`
 
+Pour cela chacun de nous va créer une brange git pour y effectuer son travail.  /On verra plus tard comment merger le tout avec le site principal/
+#+BEGIN_SRC bash  -i
+git checkout -b votrenom master
+#+END_SRC
+
 ** Page "admin"
 localhost:8000/admin   -> point vers un portail d'administration installé par défaut mais dont nous n'avons pas besoin à moins de gérer divers profils d'utilisateurs
 
