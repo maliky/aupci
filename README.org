@@ -112,16 +112,13 @@ Ouvrir votre navigateur à l'adresse indiquée (http://localhost:8888/)
 * Répartition du travail
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier `maquette_website`
 
-Pour cela chacun de nous va créer une brange git pour y effectuer son travail.  /On verra plus tard comment merger le tout avec le site principal/
-#+BEGIN_SRC bash  -i
-git checkout -b votrenom master
-#+END_SRC
-
 ** Page "admin"
 localhost:8000/admin   -> point vers un portail d'administration installé par défaut mais dont nous n'avons pas besoin à moins de gérer divers profils d'utilisateurs
 
 ** Prise en main de django
-Pour la prise en main de django je propose de vous attribuer chacun la responsabilité d'un page web:
+Il faut distinguer le projet django qui s'appelle *aupci* et _l'application_  *accueil*
+   
+Pour la prise en main du projet, je propose de vous attribuer chacun la responsabilité d'un page web.  Le but est de reproduire avec django ce que nous voyons sur la maquette
 *** Les pages
 **** Page "Évènement" @Morié
  Accessible à aup.ci/evenement
@@ -145,9 +142,14 @@ Je propose que l'un d'entre nous regarde la possibilité de faire un site pour p
 
 
 
-
 * Organisation du travail
 
   C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
 
-Le _projet_ django s'appel *aupci* et _l'application_  *accueil*.
+** Git
+Pour faire ses modifications et ses tests chacun devrait créer une brange git et y effectuer son travail.  /On verra plus tard comment merger le tout avec le site principal/
+*** Créer une banche de travail
+#+BEGIN_SRC bash  -i
+git checkout -b nom_de_votre_branche master
+#+END_SRC
+** Django
