@@ -1,14 +1,14 @@
 #+LANGUAGE: fr
-#+OPTIONS: H:2 toc:t num:t author:nil title:nil date:nil
+#+OPTIONS: H:2 toc:t num:t author:nil title:nil date:nil ^:{}
 
 Instructions pour recréer le site web en local.
 
 * Gestion de Python
-  Afin d'éviter des conflits avec les applications python utilisé par l'OS il est bien d'installer ==pyenv== qui permet de gérer en parallèle différentes version de python.
-  Par exemple, Ce website est créer avec python 3.8.2 et vous devriez travailler avec la même version.
+  Afin d'éviter des conflits avec les applications python utilisé par l'OS il est bien d'installer =pyenv= qui permet de gérer en parallèle différentes version de python.
+  Par exemple, Ce website est créer avec =python 3.8.2= et vous devriez travailler avec la même version.
 
-** Installer pyenv
-Il y a de légère différence entre le pyenv des linux et le pyenv de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec virtualenv.     Avec le pyenv de linux virtualenv est inclus dans pyenv et s'utilise en faisant
+** Installer =pyenv=
+Il y a de légère différence entre le =pyenv= des linux et le =pyenv= de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec =virtualenv=.     Avec le =pyenv= de linux =virtualenv= est inclus dans =pyenv= et s'utilise en faisant
 #+BEGIN_SRC bash  -i
 # active l'environnement virtuel appelé web
 pyenv activate web
@@ -81,7 +81,7 @@ git clone git@github.com:maliky/aupci.git
 Cela va créer un répertoire avec le suivi git.
 *** Faciliter les mises à jour git
 Ajouter votre clef publique dans votre profil git (voir section sécurité)
-- rappel :: pour générer la pair de clefs utiliser ==ssh-keygen==
+- rappel :: pour générer la pair de clefs utiliser =ssh-keygen=
 
 
 ** Installer les librairies pour le développement du site web
@@ -142,4 +142,4 @@ Je propose que l'un d'entre nous regarde la possibilité de faire un site pour p
 
 * Organisation du travail
 C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
-
+Le projet djanog est aupci et l'application est accueil
