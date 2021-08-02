@@ -1,24 +1,23 @@
-
 # Table des matières
 
-1.  [Gestion de Python](#orgcf14902)
-    1.  [Installer `pyenv`](#org78a06ad)
-    2.  [Installer python 3.8.2](#org9bd53df)
-2.  [Installation du site web](#org4c55f1c)
-    1.  [Créer un environnement virtuel](#org1901592)
-    2.  [Télécharger le code du site web](#orgaa73d14)
-    3.  [Installer les librairies pour le développement du site web](#org682f100)
-    4.  [Lancer le site web](#org8f1dd57)
-3.  [Répartition du travail](#org7709b0c)
-    1.  [Page "admin"](#org49dcda4)
-    2.  [Prise en main de django](#org5b0d3ab)
-    3.  [Exploration flask @Adelph](#org09c2dfb)
-4.  [Organisation du travail](#orgda2b696)
+1.  [Gestion de Python](#org910fed9)
+    1.  [Installer `pyenv`](#orgac147fe)
+    2.  [Installer python 3.8.2](#org822e229)
+2.  [Installation du site web](#orgf1df749)
+    1.  [Créer un environnement virtuel](#org98a1737)
+    2.  [Télécharger le code du site web](#org4220e36)
+    3.  [Installer les librairies pour le développement du site web](#orge6b5142)
+    4.  [Lancer le site web](#org0287517)
+3.  [Répartition du travail](#orgf5f7ff8)
+    1.  [Page "admin"](#org317a965)
+    2.  [Prise en main de django](#org74c328e)
+    3.  [Exploration flask @Adelph](#orgc20a7d7)
+4.  [Organisation du travail](#org2d27fd9)
 
 Instructions pour recréer le site web en local.
 
 
-<a id="orgcf14902"></a>
+<a id="org910fed9"></a>
 
 # Gestion de Python
 
@@ -26,17 +25,11 @@ Afin d'éviter des conflits avec les applications python utilisé par l'OS il es
 Par exemple, Ce website est créer avec `python 3.8.2` et vous devriez travailler avec la même version.
 
 
-<a id="org78a06ad"></a>
+<a id="orgac147fe"></a>
 
 ## Installer `pyenv`
 
 Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec `virtualenv`.     Avec le `pyenv` de linux `virtualenv` est inclus dans `pyenv` et s'utilise en faisant
-
-    # active l'environnement virtuel appelé web
-    pyenv activate web
-    
-    # Crée un nouvel environnement virtuel appelé web2
-    pyenv virtualenv web2
 
 1.  Sur linux (famille debian)
 
@@ -75,7 +68,7 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     Suivre les instructions de <https://github.com/pyenv-win/pyenv-win>
 
 
-<a id="org9bd53df"></a>
+<a id="org822e229"></a>
 
 ## Installer python 3.8.2
 
@@ -86,12 +79,12 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     pyenv local 3.8.2
 
 
-<a id="org4c55f1c"></a>
+<a id="orgf1df749"></a>
 
 # Installation du site web
 
 
-<a id="org1901592"></a>
+<a id="org98a1737"></a>
 
 ## Créer un environnement virtuel
 
@@ -103,11 +96,11 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     virtualenv .
 
 
-<a id="orgaa73d14"></a>
+<a id="org4220e36"></a>
 
 ## Télécharger le code du site web
 
-    git clone git@github.com:maliky/aupci.git
+    git clone https://github.com/maliky/aupci.git
 
 Cela va créer un répertoire avec le suivi git.
 
@@ -118,7 +111,7 @@ Cela va créer un répertoire avec le suivi git.
     -   **rappel:** pour générer la pair de clefs utiliser `ssh-keygen`
 
 
-<a id="org682f100"></a>
+<a id="orge6b5142"></a>
 
 ## Installer les librairies pour le développement du site web
 
@@ -128,38 +121,40 @@ Cela va créer un répertoire avec le suivi git.
 Le fichier requirements.txt liste simplement les paquets python utilisés par notre projet.
 
 
-<a id="org8f1dd57"></a>
+<a id="org0287517"></a>
 
 ## Lancer le site web
 
-    python manage.py runserver
+1.  Créer la base de donnée
 
-Si vous avez un avertissement concernant la base de donnée (qui n'est pas partagée) utiliser
+        python manage.py migrate
 
-    python manage.py migrate
+2.  Lancer le serveur en local
 
-Cela recrée un base de donnée vierge.
+        python manage.py runserver
+    
+    L'idée c'est dans un premier temps de ne pas partager la base de données (sqlite) mais d'en utiliser une vierge sur chacune de nos machines.
+    
+    Normalement le site web doit être accessible à l'adresse <http://localhost:8000>
+    
+    Il faut le rendre sembable à la maquette.
 
-L'idée c'est dans un premier temps de ne pas partager la base de données (sqlite) mais d'en utiliser une vierge sur chacune de nos machines.
 
-Normalement le site web doit être accessible à l'adresse <http://localhost:8000>
-
-
-<a id="org7709b0c"></a>
+<a id="orgf5f7ff8"></a>
 
 # Répartition du travail
 
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier \`maquette\_website\`
 
 
-<a id="org49dcda4"></a>
+<a id="org317a965"></a>
 
 ## Page "admin"
 
 localhost:8000/admin   -> point vers un portail d'administration installé par défaut mais dont nous n'avons pas besoin à moins de gérer divers profils d'utilisateurs
 
 
-<a id="org5b0d3ab"></a>
+<a id="org74c328e"></a>
 
 ## Prise en main de django
 
@@ -200,17 +195,18 @@ Pour la prise en main de django je propose de vous attribuer chacun la responsab
         C'est le dossier qui contient les templates appelé par les views.  On parle de templates, car il y a un mini langage pour par exemple faire un tableau html à partir d'un objet python list.  Et puis on peut réutiliser du code comme le fichier base.html (avec les headers)
 
 
-<a id="org09c2dfb"></a>
+<a id="orgc20a7d7"></a>
 
 ## Exploration flask @Adelph
 
 Je propose que l'un d'entre nous regarde la possibilité de faire un site pour pycon par exemple avec flask.  On pourrait voir comment reproduire la page d'accueil de aupci avec flask.  C'est peut être plus simple et rapide à maîtriser.
 
 
-<a id="orgda2b696"></a>
+<a id="org2d27fd9"></a>
 
 # Organisation du travail
 
 C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
-Le projet djanog est aupci et l'application est accueil
+
+Le <span class="underline">projet</span> django s'appel **aupci** et <span class="underline">l'application</span>  **accueil**.
 

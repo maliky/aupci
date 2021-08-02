@@ -9,13 +9,6 @@ Instructions pour recréer le site web en local.
 
 ** Installer =pyenv=
 Il y a de légère différence entre le =pyenv= des linux et le =pyenv= de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec =virtualenv=.     Avec le =pyenv= de linux =virtualenv= est inclus dans =pyenv= et s'utilise en faisant
-#+BEGIN_SRC bash  -i
-# active l'environnement virtuel appelé web
-pyenv activate web
-
-# Crée un nouvel environnement virtuel appelé web2
-pyenv virtualenv web2
-#+END_SRC
 
 *** Sur linux (famille debian)
 Suivre les instruction du [[https://github.com/pyenv/pyenv][projet sur github]].  En gros
@@ -51,7 +44,6 @@ pour mettre à jour pour recharger ses fichiers de config
 
 *** Pour windows
     Suivre les instructions de https://github.com/pyenv-win/pyenv-win
-
     
 
 ** Installer python 3.8.2
@@ -76,7 +68,7 @@ virtualenv .
 
 ** Télécharger le code du site web 
 #+BEGIN_SRC bash  -i
-git clone git@github.com:maliky/aupci.git
+git clone https://github.com/maliky/aupci.git
 #+END_SRC
 Cela va créer un répertoire avec le suivi git.
 *** Faciliter les mises à jour git
@@ -93,20 +85,20 @@ python -m pip install -r requirements.txt
 Le fichier requirements.txt liste simplement les paquets python utilisés par notre projet.
 
 ** Lancer le site web
+*** Créer la base de donnée
+#+BEGIN_SRC bash  -i
+python manage.py migrate
+#+END_SRC
+*** Lancer le serveur en local
 #+BEGIN_SRC bash  -i
 python manage.py runserver
 #+END_SRC   
 
-Si vous avez un avertissement concernant la base de donnée (qui n'est pas partagée) utiliser
-#+BEGIN_SRC bash  -i
-python manage.py migrate
-#+END_SRC
-
-Cela recrée un base de donnée vierge.
-
 L'idée c'est dans un premier temps de ne pas partager la base de données (sqlite) mais d'en utiliser une vierge sur chacune de nos machines.
 
 Normalement le site web doit être accessible à l'adresse http://localhost:8000
+
+Il faut le rendre sembable à la maquette.
 
 * Répartition du travail
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier `maquette_website`
@@ -141,5 +133,7 @@ Je propose que l'un d'entre nous regarde la possibilité de faire un site pour p
 
 
 * Organisation du travail
-C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
-Le projet djanog est aupci et l'application est accueil
+
+  C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
+
+Le _projet_ django s'appel *aupci* et _l'application_  *accueil*.
