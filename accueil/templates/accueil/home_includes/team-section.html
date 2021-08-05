@@ -1,0 +1,38 @@
+<!-- Team section -->
+{% load static %}
+{% static "accueil/img/member" as imgMemberUrl %}
+<section class="team-section spad">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Le bureau</h2>
+      <p>Passionnée de programmation et de challenges!</p>
+    </div>
+  </div>
+  <div class="team-members clearfix">
+    <!-- Team member -->
+    {% for member in team %}
+    <div class="member">
+      <div class="member-text">
+	<div class="member-img set-bg" data-setbg="{{imgMemberUrl}}/{{member.image}}"></div>
+	<h2>{{member.nom}}</h2>
+	<span>{{member.fonction}}</span>
+      </div>
+      <div class="member-social">
+	<a href="index.html"><i class="fa fa-facebook"></i></a>
+	<a href="index.html"><i class="fa fa-linkedin"></i></a>
+	<a href="index.html"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="member-info">
+	<div class="member-img mf set-bg" data-setbg="{{imgMemberUrl}}/{{member.image}}"></div>
+	<div class="member-meta">
+	  <h2>{{member.nom}}</h2>
+	  <span>{{member.fonction}}</span>
+	</div>
+	<p>{{member.description}}</p>
+      </div>
+    </div>
+    
+    {% endfor %}
+
+</section>
+<!-- Team section -->
