@@ -6,6 +6,7 @@ app_name = 'accueil'
 
 urlpatterns = [
     path('', views.Accueil.as_view(), name='accueil'),
+    path('accueil', views.Accueil.as_view(), name='accueil'),
     path('adhesion', views.Adhesion.as_view(), name='adhesion'),    
 ]
 
