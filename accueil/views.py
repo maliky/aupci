@@ -42,6 +42,11 @@ class Accueil(View):
 
         return render(request, "accueil/home.html", {"team": team})
 
+class Adhesion(View):
+    def get(self, request):
+        context = {"Titre": "Page d'Adhésion"}
+        return render(request, "accueil/adhesion.html", context)
+    
 
 def error_404_view(request, exception):
     return render(request, "accueil/error_404.html")
