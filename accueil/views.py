@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.views import View
+from accueil.forms import AdherentForm
+from django.core.mail import send_mail
 
 # Create your views here.
 class Accueil(View):
@@ -42,11 +44,24 @@ class Accueil(View):
 
         return render(request, "accueil/home.html", {"team": team})
 
+
 class Adhesion(View):
     def get(self, request):
-        context = {"Titre": "Page d'Adhésion"}
+        form = AdherentForm()
+        context = {"formulaire_adherent": form, "Titre": "Page d'adéhsion"}
         return render(request, "accueil/adhesion.html", context)
-    
+
+    def post(self, request):
+        # juste un exemple d'action
+        send_mail(
+            "Subject here",
+            "Here is the message.",
+            "malikykone@gmail.com",
+            ["malikykone@gmail.com"],
+            fail_silently=False,
+        )
+        return request
+
 
 def error_404_view(request, exception):
     return render(request, "accueil/error_404.html")
