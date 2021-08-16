@@ -1,13 +1,17 @@
-<!-- Adhésion section -->
+<!-- Adhesion section -->
 {% load static %}
 <section class="adhesion-section spad">
   <div class="container">
     <div class="row">
       <div class="col-lg-6 offset-lg-6 adhesion-text">
 	<h2>{{Titre}}</h2>
-	<a href="accueil" class="site-btn sb-gradients sbg-line mt-5">En savoir +</a>
+	<form action="remerciement_adhesion" method='post'>
+	  {% csrf_token %}
+	  {{formulaire_adherent}}
+	  <input type="submit" value="Submit" />
+	</form>
       </div>
     </div>
   </div>
 </section>
-<!-- Adhsion section end -->
+<!-- Adhesion section end -->
