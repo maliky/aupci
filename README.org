@@ -5,10 +5,10 @@ Instructions pour recréer le site web en local.
 
 * Gestion de Python
   Afin d'éviter des conflits avec les applications python utilisé par l'OS il est bien d'installer =pyenv= qui permet de gérer en parallèle différentes version de python.
-  Par exemple, Ce website est créer avec =python 3.8.2= et vous devriez travailler avec la même version.
+  Par exemple, Ce website est créé avec =python 3.8.2= et vous devriez travailler avec la même version.
 
 ** Installer =pyenv=
-Il y a de légère différence entre le =pyenv= des linux et le =pyenv= de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec =virtualenv=.     Avec le =pyenv= de linux =virtualenv= est inclus dans =pyenv= et s'utilise en faisant
+Il y a de légère différence entre le =pyenv= des linux et le =pyenv= de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec =virtualenv=.     Avec le =pyenv= de linux =virtualenv= est inclus dans =pyenv= et s'utilise en faisant =pyenv virtualenv=.
 
 *** Sur linux (famille debian)
 Suivre les instruction du [[https://github.com/pyenv/pyenv][projet sur github]].  En gros
@@ -23,13 +23,13 @@ libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-d
      #+BEGIN_SRC bash  -i
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
      #+END_SRC
-**** Vérifier ses fichiers de config du bash
+**** Vérifier les fichiers de config de son shell (bash)
 ***** dans .bashrc avoir
 #+BEGIN_SRC bash  -i
 eval "$(pyenv init -)"
 #+END_SRC
 
-***** dans .profil avoir
+***** dans .profil (ou .bash_profil) avoir
 #+BEGIN_SRC bash  -i
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -38,7 +38,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 #+END_SRC
 **** Redémarrer
-pour mettre à jour pour recharger ses fichiers de config
+pour mettre à jour et recharger la config
 
      
 
@@ -100,15 +100,6 @@ Normalement le site web doit être accessible à l'adresse http://localhost:8000
 
 Il faut le rendre sembable à la maquette.
 
-* La maquette
-** Visualiser la maquette en locale
-#+BEGIN_SRC bash  -i
-cd maquette_website
-python -m http.server 8888
-#+END_SRC   
-
-Ouvrir votre navigateur à l'adresse indiquée (http://localhost:8888/)
-  
 * Répartition du travail
 Vous verrez que la page de garde est très simple.  Je (@malik) me charge de reproduire celle du site contenu dans le dossier `maquette_website`
 
@@ -116,9 +107,7 @@ Vous verrez que la page de garde est très simple.  Je (@malik) me charge de rep
 localhost:8000/admin   -> point vers un portail d'administration installé par défaut mais dont nous n'avons pas besoin à moins de gérer divers profils d'utilisateurs
 
 ** Prise en main de django
-Il faut distinguer le projet django qui s'appelle *aupci* et _l'application_  *accueil*
-   
-Pour la prise en main du projet, je propose de vous attribuer chacun la responsabilité d'un page web.  Le but est de reproduire avec django ce que nous voyons sur la maquette
+Pour la prise en main de django je propose de vous attribuer chacun la responsabilité d'un page web:
 *** Les pages
 **** Page "Évènement" @Morié
  Accessible à aup.ci/evenement
@@ -142,14 +131,9 @@ Je propose que l'un d'entre nous regarde la possibilité de faire un site pour p
 
 
 
+
 * Organisation du travail
 
   C'est évidemment un travail collaboratif, mais pour une efficacité accrue il faut que nous nous mettions tous à peu près au même niveau.  Je propose de faire un point physique jeudi prochain à 10h au LARIT pour dénouer les gros blocages.  D'ici là chacun devrait se documenter sur django et prendre pour exemple le code de ce dossier simple et fonctionnel.
 
-** Git
-Pour faire ses modifications et ses tests chacun devrait créer une brange git et y effectuer son travail.  /On verra plus tard comment merger le tout avec le site principal/
-*** Créer une banche de travail
-#+BEGIN_SRC bash  -i
-git checkout -b nom_de_votre_branche master
-#+END_SRC
-** Django
+Le _projet_ django s'appel *aupci* et _l'application_  *accueil*.
