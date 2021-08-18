@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Evènement de l'Association
+{% endblock title %}
+
+{% block varheader %}
+    <!-- Page info section -->
+	<section class="page-info-section">
+		<div class="container">
+			<h2>Holélé</h2>
+			<div class="site-beradcamb">
+				<a href="">Accueil</a>
+				<span><i class="fa fa-angle-right"></i>Evènements</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page info end -->
+
+    {% endblock varheader %}
+
+{% block content %}
+	<!-- About section -->
+	<!-- Blog section -->
+	<section class="blog-page spad">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8">
+					<div class="row">
+						<!-- blog item -->
+						<div class="col-md-12">
+							<div class="blog-item bi-feature">
+								<figure class="blog-thumb">
+									<img src="{%static 'img/blog/2.jpg' %}" alt="">
+								</figure>
+								<div class="blog-text">
+									<div class="post-date">28 juillet 2021</div>
+									<h4 class="blog-title"><a href="single-blog.html">Formation sur le Bitcoin</a></h4>
+									<div class="post-meta">
+										<a href=""><span>par</span> Admin</a>
+										<a href=""><i class="fa fa-heart-o"></i> 34 Likes</a>
+										<a href=""><i class="fa fa-comments-o"></i> 08 commentaires</a>
+									</div>
+									<p>Venez apprendre les fondamentaux  des technologies qui propulsent le bitcoin.</p>
+									<a href="" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+						</div>
+							<!-- blog item -->
+						<div class="col-md-6">
+							<div class="blog-item">
+								<figure class="blog-thumb">
+									<img src="{%static 'img/blog/4.jpg' %}" alt="">
+								</figure>
+								<div class="blog-text">
+									<div class="post-date">22 jan 2021</div>
+									<h4 class="blog-title"><a href="single-blog.html">Créer un journal en ligne</a></h4>
+									<div class="post-meta">
+										<a href=""><span>par</span> Admin</a>
+										<a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+										<a href=""><i class="fa fa-comments-o"></i> 28 commentaires</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- blog item -->
+						<div class="col-md-6">
+							<div class="blog-item">
+								<figure class="blog-thumb">
+									<img src="{%static 'img/blog/5.jpg' %}" alt="">
+								</figure>
+								<div class="blog-text">
+									<div class="post-date">18 dec 2019</div>
+									<h4 class="blog-title"><a href="single-blog.html">Application mobile avec Kivy</a></h4>
+									<div class="post-meta">
+										<a href=""><span>par</span> Admin</a>
+										<a href=""><i class="fa fa-heart-o"></i> 300 Likes</a>
+										<a href=""><i class="fa fa-comments-o"></i> 15 commentaires</a>
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<button class="post-loadmore site-btn sb-gradients sbg-line mt-5">VOIR PLUS</button>
+				</div>
+				<div class="col-lg-4 col-md-6 sideber pt-5 pt-lg-0">
+					<div class="widget-area">
+						<h4 class="widget-title">NewsLetter</h4>
+						<p>Souscrivez et recevez les dernières news.</p>
+						<form class="widget-subscribe-from">
+							<input type="text" placeholder="Votre email">
+							<button class="site-btn sb-full-- sb-gradients">Souscrire</button>
+						</form>
+					</div>
+					<div class="widget-area">
+						<div class="widget">
+							<h4 class="widget-title">Catégories</h4>
+							<ul>
+								<li><a href="#">Formation</a></li>
+								<li><a href="#">Hackathon</a></li>
+								<li><a href="#">Découverte</a></li>
+
+							</ul>
+						</div>
+						<div class="widget">
+							<h4 class="widget-title"> Derniers Posts</h4>
+							<ul class="popular-posts">
+								<li>
+									<span>22 mars 2021</span>
+									<h5><a href="">Algorithme avec Python</a></h5>
+								</li>
+								<li>
+									<span>22 dec 2019</span>
+									<h5><a href="">Sécurité basé sur le langage Python</a></h5>
+								</li>
+
+							</ul>
+						</div>
+
+						<div class="widget">
+							<h4 class="widget-title">Follow Us</h4>
+							<div class="social">
+								<a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+								<a href="" class="telegram"><i class="fa fa-google-plus"></i></a>
+								<a href="" class="instagram"><i class="fa fa-instagram"></i></a>
+								<a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Blog section end -->
+  {% endblock content %}
+
+
