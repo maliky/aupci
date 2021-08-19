@@ -19,3 +19,6 @@ Via la commande ci-dessous:
 ```python manage.py runserver --settings=config.settings.production```
 
 N.B: Toute appel à une commande necessitant manage.py doit utiliser l'une des valeurs ci-dessous pour l'option --settings
+
+Il faut aussi également installer un moteur de base de données [postgresql](https://www.postgresql.org/download/) ou changer la configuration de la base de données dans le fichier (config/settings/base.py) 
+pour utiliser sqlite.
