@@ -17,3 +17,5 @@ Via la commande ci-dessous:
 Via la commande ci-dessous:
 
 ```python manage.py runserver --settings=config.settings.production```
+
+N.B: Toute appel à une commande necessitant manage.py doit utiliser l'une des valeurs ci-dessous pour l'option --settings
