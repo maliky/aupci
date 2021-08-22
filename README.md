@@ -19,9 +19,15 @@
 
 ```python manage.py makemigrations --settings=config.settings.dev```
 
-Puis:
+3. Appliquez les migrations à la base de données
 
 ```python manage.py migrate --settings=config.settings.dev```
+
+N.B: Supprimer le dossier migration existant avant d'appliquer les deux commandes ci-dessus.
+
+4. Créer un super utilisateur 
+
+```python manage.py createsuperuser --settings=config.settings.dev```
 
 
 # Execution du projet
