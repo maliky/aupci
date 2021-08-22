@@ -32,7 +32,20 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "site_static")]
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-y(!-s^pi=b^=j&)4ro%960h^1sqlea0ep$4ync$35h%5=@8ke5'
 
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'crispy_forms',
+    #'aup_ci',
+    #'config'
+    'django-aup_ci.aup_ci',
+]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 #ROOT_URLCONF = BASE_DIR/'aup_ci.urls'
 ROOT_URLCONF = 'config.urls'

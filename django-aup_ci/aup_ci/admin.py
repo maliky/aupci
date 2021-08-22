@@ -1,4 +1,6 @@
 from django.contrib import  admin
-from .models import  MemberRequest
+from .models import  DemandeAdhesion, Membre, Evenement
 
-admin.site.register(MemberRequest)
+admin.site.register(DemandeAdhesion)
+admin.site.register(Membre)
+admin.site.register(Evenement)

@@ -20,19 +20,11 @@ DEBUG_TOOLBAR_PANELS = [
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+INSTALLED_APPS += [
     'django_extensions',
-    #'aup_ci',
-    #'config'
     'debug_toolbar',
-    'django-aup_ci.aup_ci',
 ]
+
 
 # MIDDLEWARE
 

@@ -150,5 +150,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
 	<script src="{%static  'js/jquery-3.2.1.min.js' %}"></script>
 	<script src="{%static  'js/owl.carousel.min.js' %}"></script>
 	<script src="{%static   'js/main.js' %}"></script>
+    <script>
+
+		setTimeout(function () {
+			if ($('#msg').length>0){
+				$('#msg').remove();
+			}
+
+		}, 3000)
+	</script>
 </body>
 </html>
