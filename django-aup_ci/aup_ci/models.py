@@ -15,7 +15,11 @@ class DemandeAdhesion(TimestampUseModel):
     profession = models.CharField(max_length=250)
     entreprise= models.CharField(max_length=250)
     telephone = models.CharField(max_length=20)
-    courriel = models.EmailField()
+    courriel = models.CharField(max_length=255)
+    traiter = models.BooleanField(default=False)
+
+
+
 
     def __str__(self):
         return '{} {} <{}>'.format(self.prenoms, self.nom, self.courriel)
