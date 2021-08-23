@@ -7,93 +7,93 @@ Contact
 
 {% block varheader %}
 
- <!-- Page info section -->
-	<section class="page-info-section">
-		<div class="container">
-			<h2>Formulaire</h2>
-			<div class="site-beradcamb">
-				<a href="">Accueil</a>
-				<span><i class="fa fa-angle-right"></i>Nous-contacter</span>
-			</div>
-		</div>
-	</section>
-	<!-- Page info end -->
+<!-- Page info section -->
+<section class="page-info-section">
+  <div class="container">
+    <h2>Formulaire</h2>
+    <div class="site-beradcamb">
+      <a href="">Accueil</a>
+      <span><i class="fa fa-angle-right"></i>Nous-contacter</span>
+    </div>
+  </div>
+</section>
+<!-- Page info end -->
 
-    {% endblock varheader %}
+{% endblock varheader %}
 
 {% block content %}
-	<!-- About section -->
-	<!-- Contact section -->
-	<section class="contact-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-7">
-						{% if messages %}
-							  {% for msg in messages %}
+<!-- About section -->
+<!-- Contact section -->
+<section class="contact-page spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+	{% if messages %}
+	{% for msg in messages %}
 
-        						  <div class="alert alert-{{msg.level_tag}} " role="alert" id="msg">
-									 <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                      <span aria-hidden="true">&times;</span>
-									  </button>-->
-            							{{msg.message}}
-								  </div>
+        <div class="alert alert-{{msg.level_tag}} " role="alert" id="msg">
+	  <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+	  </button>-->
+          {{msg.message}}
+	</div>
 
-					          {% endfor %}
+	{% endfor %}
 
-                    {% endif %}
+        {% endif %}
 
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-7">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-7">
 
-					<form class="contact-form" method="post" action="/contact">
-						{% csrf_token %}
-						<div class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									{{ form.lastname|as_crispy_field }}
-									<!-- <input class="check-form" type="text" placeholder="Nom*:"> -->
-									<span><i class="ti-check"></i></span>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<!--<input class="check-form" type="text" placeholder="Prénom(s)*:">-->
-									{{ form.firstname|as_crispy_field }}
-									<span><i class="ti-check"></i></span>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<!--<input class="check-form" type="text" placeholder="Email*:"> -->
-									{{ form.email|as_crispy_field }}
-									<span><i class="ti-check"></i></span>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<!--<input class="check-form" type="text" placeholder="N° Téléphone*:">-->
-									{{ form.phone|as_crispy_field }}
-									<span><i class="ti-check"></i></span>
-								</div>
-							</div>
-							<div class="col-md-12">
-								<div class="form-group">
-									<!--<textarea placeholder="Votre préoccupation!"></textarea>-->
-									{{ form.message|as_crispy_field }}
-								</div>
+	<form class="contact-form" method="post" action="/contact">
+	  {% csrf_token %}
+	  <div class="row">
+	    <div class="col-md-6">
+	      <div class="form-group">
+		{{ form.lastname|as_crispy_field }}
+		<!-- <input class="check-form" type="text" placeholder="Nom*:"> -->
+		<span><i class="ti-check"></i></span>
+	      </div>
+	    </div>
+	    <div class="col-md-6">
+	      <div class="form-group">
+		<!--<input class="check-form" type="text" placeholder="Prénom(s)*:">-->
+		{{ form.firstname|as_crispy_field }}
+		<span><i class="ti-check"></i></span>
+	      </div>
+	    </div>
+	    <div class="col-md-6">
+	      <div class="form-group">
+		<!--<input class="check-form" type="text" placeholder="Email*:"> -->
+		{{ form.email|as_crispy_field }}
+		<span><i class="ti-check"></i></span>
+	      </div>
+	    </div>
+	    <div class="col-md-6">
+	      <div class="form-group">
+		<!--<input class="check-form" type="text" placeholder="N° Téléphone*:">-->
+		{{ form.phone|as_crispy_field }}
+		<span><i class="ti-check"></i></span>
+	      </div>
+	    </div>
+	    <div class="col-md-12">
+	      <div class="form-group">
+		<!--<textarea placeholder="Votre préoccupation!"></textarea>-->
+		{{ form.message|as_crispy_field }}
+	      </div>
 
-								<button type="submit" class="site-btn sb-gradients mt-4">Soumettre</button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="col-lg-5 mt-5 mt-lg-0">
-					<div class="map" id="map-canvas"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Contact section end -->
-  {% endblock content %}
+	      <button type="submit" class="site-btn sb-gradients mt-4">Soumettre</button>
+	    </div>
+	  </div>
+	</form>
+      </div>
+      <div class="col-lg-5 mt-5 mt-lg-0">
+	<div class="map" id="map-canvas"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Contact section end -->
+{% endblock content %}
