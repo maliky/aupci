@@ -71,6 +71,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://stackoverflow.com/questions/30641512/create-database-from-command-line
 
 #DATABASES = {
 #    'default': {
@@ -90,6 +91,7 @@ DATABASES = {
     }
 }
 
+# sudo -u postgres psql -c 'create database test;'
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
