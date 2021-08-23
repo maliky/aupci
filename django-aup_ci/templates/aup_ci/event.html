@@ -26,6 +26,25 @@ Evènement de l'Association
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8">
+
+			<div class="row">
+					<div class="col-lg-8">
+						{% if messages %}
+							  {% for msg in messages %}
+
+        						  <div class="alert alert-{{msg.level_tag}} " role="alert" id="msg">
+									 <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+									  </button>-->
+            							{{msg.message}}
+								  </div>
+
+					          {% endfor %}
+
+                    {% endif %}
+
+				</div>
+			</div>
 					<div class="row">
 						<!-- blog item -->
 						<div class="col-md-12">

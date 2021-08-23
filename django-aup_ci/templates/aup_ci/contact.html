@@ -52,7 +52,7 @@ Contact
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
-									{{ form.nom|as_crispy_field }}
+									{{ contactform.nom|as_crispy_field }}
 									<!-- <input class="check-form" type="text" placeholder="Nom*:"> -->
 									<span><i class="ti-check"></i></span>
 								</div>
@@ -60,31 +60,31 @@ Contact
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Prénom(s)*:">-->
-									{{ form.prenoms|as_crispy_field }}
+									{{ contactform.prenoms|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Email*:"> -->
-									{{ form.courriel|as_crispy_field }}
+									{{ contactform.courriel|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="N° Téléphone*:">-->
-									{{ form.telephone|as_crispy_field }}
+									{{ contactform.telephone|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-12">
 								<div class="form-group">
 									<!--<textarea placeholder="Votre préoccupation!"></textarea>-->
-									{{ form.message|as_crispy_field }}
+									{{ contactform.message|as_crispy_field }}
 								</div>
 
-								<button type="submit" class="site-btn sb-gradients mt-4">Soumettre</button>
+								<button type="submit" name="contact" class="site-btn sb-gradients mt-4">Soumettre</button>
 							</div>
 						</div>
 					</form>

@@ -51,42 +51,42 @@ Adhésion
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Nom*:">-->
-									{{ form.nom|as_crispy_field }}
+									{{ adhereform.nom|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Prénom(s)*:">-->
-									{{ form.prenoms|as_crispy_field }}
+									{{ adhereform.prenoms|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Profession:">-->
-									{{ form.profession|as_crispy_field }}
+									{{ adhereform.profession|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="Ecole, Entreprise ou Institution:">-->
-									{{ form.entreprise|as_crispy_field }}
+									{{ adhereform.entreprise|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="E-mail*:">-->
-									{{ form.courriel|as_crispy_field }}
+									{{ adhereform.courriel|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-group">
 									<!--<input class="check-form" type="text" placeholder="N° Téléphone*:">-->
-									{{ form.telephone|as_crispy_field }}
+									{{ adhereform.telephone|as_crispy_field }}
 									<span><i class="ti-check"></i></span>
 								</div>
 							</div>
@@ -104,7 +104,7 @@ Adhésion
 									</label>
 								</div>-->
 
-								<button type="submit" class="site-btn sb-gradients mt-4">Soumettre</button>
+								<button type="submit" name="adhere" class="site-btn sb-gradients mt-4">Soumettre</button>
 							</div>
 						</div>
 					</form>

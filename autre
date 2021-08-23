@@ -1,6 +1,3 @@
-Microsoft Windows [version 10.0.19043.1165]
-(c) Microsoft Corporation. Tous droits réservés.
-
 D:\My_Django_Projects\aup_ci_repository>workon aup_ci
 (aup_ci) D:\My_Django_Projects\aup_ci_repository>python manage.py createsuperuser --settings=config.settings.dev
 Nom d’utilisateur (leave blank to use 'amanv'): ferdiBest
@@ -9,12 +6,14 @@ Password:
 Password (again):
 Superuser created successfully.
 
-dev.py/production.py/
-dev.txt
-forms.py
-contact.html
-admin.py,
-models.py
-requirements/*
-[migrations/*]
+Liens utiles utilisées lors du codes :
+- Newsletter : https://www.twilio.com/blog/build-email-newsletter-django-twilio-sendgrid
+- Model Relationship: https://www.remoteinning.com/blog/how-to-effectively-design-relations-between-your-django-models
+- Documentation django: https://docs.djangoproject.com/fr/3.2/topics/
+- Form with bootstrap:
+    1. https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html
+    2. https://www.ordinarycoders.com/blog/article/render-a-django-form-with-bootstrap
+
+
+
 

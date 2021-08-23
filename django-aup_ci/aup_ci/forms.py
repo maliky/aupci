@@ -1,6 +1,6 @@
 from django import forms
 from django.forms import  ModelForm, TextInput, EmailInput
-from .models import DemandeAdhesion
+from .models import DemandeAdhesion, AbonneNew
 
 class ContactForm(forms.Form):
     nom = forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Nom*', 'class': 'check-form'}))
@@ -28,4 +28,15 @@ class AdhesionForm(ModelForm):
             "telephone": TextInput(attrs={'placeholder': 'Telephone* :', 'class': 'check-form'}),
             "entreprise": TextInput(attrs={'placeholder': 'Entreprise* :', 'class': 'check-form'}),
             "courriel": EmailInput(attrs={'placeholder': 'Email* :', 'class': 'check-form'}),
+        }
+
+
+class AbonneNewForm(ModelForm):
+
+    class Meta:
+        model = AbonneNew
+        exclude = ["confirme_abonne"]
+        labels = {"courriel": "",}
+        widgets = {
+            "courriel": EmailInput(attrs={'placeholder': 'Courriel (ex: xxxxxx@gmail.com)'}),
         }

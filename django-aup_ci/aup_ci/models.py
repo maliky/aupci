@@ -48,11 +48,44 @@ class Evenement(TimestampUseModel):
     type_evenement = models.CharField(max_length=2, choices=LISTE_choix, default="MP")
     description = models.TextField()
     date_adhesion = models.DateTimeField()
-    image_evenement = models.ImageField(upload_to ='uploads/')
+    image_evenement = models.ImageField(upload_to ='uploads/img/events/')
     membres = models.ManyToManyField(Membre, related_name="evenements")
 
     def __str__(self):
         return '{} {}'.format(self.titre, self.lieu)
+
+
+class AbonneNew(models.Model):
+    courriel = models.EmailField(unique=True)
+    #conf_num = models.CharField(max_length=15)
+    confirme_abonne = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.courriel + " (" + ("n'est pas " if not self.confirme_abonne else "est ") + "confirmé)"
+
+#class
+class Newsletter(TimestampUseModel):
+    sujet = models.CharField(max_length=150)
+    contenu = models.FileField(upload_to='uploads/file/newsletters/')
+
+    def __str__(self):
+        return self.sujet + " " + self.Date_creation.strftime("%B %d, %Y")
+
+    def send(self, request):
+        contents = self.contents.read().decode('utf-8')
+        subscribers = AbonneNew.objects.filter(confirmed=True)
+        #sg = SendGridAPIClient(settings.SENDGRID_API_KEY)
+        #for sub in subscribers:
+        #    message = Mail(
+        #        from_email=settings.FROM_EMAIL,
+        #        to_emails=sub.email,
+        #        subject=self.subject,
+        #        html_content=contents + (
+        #            '<br><a href="{}/delete/?email={}&conf_num={}">Unsubscribe</a>.').format(
+        #            request.build_absolute_uri('/delete/'),
+        #            sub.email,
+        #            sub.conf_num))
+        #    sg.send(message)
 
 
     
