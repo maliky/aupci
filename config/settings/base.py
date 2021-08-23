@@ -25,8 +25,6 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "site_static")]
   #  os.path.join(BASE_DIR, "django-aup_ci/static"),
 #)
 
-ALLOWED_HOSTS = ['localhost', '192.168.1.1']
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
