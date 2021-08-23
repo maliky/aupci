@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aupci_db',
+        'NAME': 'aupci_DB',
         'USER': 'aupci_admin',
         'PASSWORD': 'Brou/Issu/Dune/Ocre/Neuf',
         'HOST': '127.0.0.1',
