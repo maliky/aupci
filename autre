@@ -1,0 +1,20 @@
+Microsoft Windows [version 10.0.19043.1165]
+(c) Microsoft Corporation. Tous droits réservés.
+
+D:\My_Django_Projects\aup_ci_repository>workon aup_ci
+(aup_ci) D:\My_Django_Projects\aup_ci_repository>python manage.py createsuperuser --settings=config.settings.dev
+Nom d’utilisateur (leave blank to use 'amanv'): ferdiBest
+Adresse électronique: amanvon238@gmail.com
+Password:
+Password (again):
+Superuser created successfully.
+
+dev.py/production.py/
+dev.txt
+forms.py
+contact.html
+admin.py,
+models.py
+requirements/*
+[migrations/*]
+

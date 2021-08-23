@@ -1,6 +1,9 @@
+#Prééquis
+1. Cloner notre branche
 
-# Table des matières
+2. Installer un moteur de base de données [postgresql](https://www.postgresql.org/download/) tout en installant pgadmin lors de l'installation de postgresql
 
+<<<<<<< HEAD
 1.  [Gestion de Python](#org4ece436)
     1.  [Installer `pyenv`](#orgd1d6a93)
     2.  [Installer python 3.8.2](#orga834c3c)
@@ -14,26 +17,50 @@
     2.  [Prise en main de django](#org2afb079)
     3.  [Exploration flask @Adelph](#org4b4a976)
 4.  [Organisation du travail](#orgaa583d4)
+=======
+3. Selon la section "DATABASE" dans le fichier (config/settings/base.py), il faut maintenant ouvrir pgadmin puis créer la base de données 'aupci_DB'
+>>>>>>> master
 
-Instructions pour recréer le site web en local.
+4. Dans ce même fichier configuration changer le mot de passe "Ferdi" par le mot de passe que vous avez utilisé lors de l'installation de postgresql.
 
+# Installation
 
+<<<<<<< HEAD
 <a id="org4ece436"></a>
+=======
+1. Installation des packages réquis avec la commande ci-dessous:
+>>>>>>> master
 
-# Gestion de Python
+ ```pip install -r requirements/dev.txt```
+ 
+ N.B: Assurez-vous que vous avez installé python et un paquet permettant de créer un environnement. Puis créez un environnement virtuel avant d'exécuter la commande
 
+<<<<<<< HEAD
 Afin d'éviter des conflits avec les applications python utilisé par l'OS il est bien d'installer `pyenv` qui permet de gérer en parallèle différentes version de python.
 Par exemple, Ce website est créé avec `python 3.8.2` et vous devriez travailler avec la même version.
+=======
+2. Créer les migrations comme suit:
+>>>>>>> master
 
+```python manage.py makemigrations --settings=config.settings.dev```
 
+<<<<<<< HEAD
 <a id="orgd1d6a93"></a>
+=======
+3. Appliquez les migrations à la base de données
+>>>>>>> master
 
-## Installer `pyenv`
+```python manage.py migrate --settings=config.settings.dev```
 
+<<<<<<< HEAD
 Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windows.  Avec celui de windows il faut gérer ses environnements virtuels séparément avec `virtualenv`.     Avec le `pyenv` de linux `virtualenv` est inclus dans `pyenv` et s'utilise en faisant `pyenv virtualenv`.
+=======
+N.B: Supprimer le dossier migration existant avant d'appliquer les deux commandes ci-dessus.
+>>>>>>> master
 
-1.  Sur linux (famille debian)
+4. Créer un super utilisateur 
 
+<<<<<<< HEAD
     Suivre les instruction du [projet sur github](https://github.com/pyenv/pyenv).  En gros
     
     1.  S'assurer d'avoir les dépendances pour compiler différentes version de python
@@ -63,23 +90,29 @@ Il y a de légère différence entre le `pyenv` des linux et le `pyenv` de windo
     4.  Redémarrer
     
         pour mettre à jour et recharger la config
+=======
+```python manage.py createsuperuser --settings=config.settings.dev```
+>>>>>>> master
 
-2.  Pour windows
 
-    Suivre les instructions de <https://github.com/pyenv-win/pyenv-win>
+# Execution du projet
+## En mode développement
 
+Via la commande ci-dessous:
 
+<<<<<<< HEAD
 <a id="orga834c3c"></a>
+=======
+```python manage.py runserver --settings=config.settings.dev```
+>>>>>>> master
 
-## Installer python 3.8.2
+## En mode production
 
-    pyenv install 3.8.2
-    # créer un répertoire pour le dev web
-    mkdir webdev; cd webdev
-    # choisir la version python 3.8.2 pour ce dossier (et sous dossier)
-    pyenv local 3.8.2
+Via la commande ci-dessous:
 
+```python manage.py runserver --settings=config.settings.production```
 
+<<<<<<< HEAD
 <a id="orge92d117"></a>
 
 # Installation du site web
@@ -211,3 +244,6 @@ C'est évidemment un travail collaboratif, mais pour une efficacité accrue il f
 
 Le <span class="underline">projet</span> django s'appel **aupci** et <span class="underline">l'application</span>  **accueil**.
 
+=======
+N.B: Toute appel à une commande necessitant manage.py doit utiliser l'une des valeurs ci-dessous pour l'option --settings
+>>>>>>> master
