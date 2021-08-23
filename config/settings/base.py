@@ -25,6 +25,8 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "site_static")]
   #  os.path.join(BASE_DIR, "django-aup_ci/static"),
 #)
 
+ALLOWED_HOSTS = ['localhost', '192.168.1.1']
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -83,9 +85,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aupci_DB',
-        'USER': 'postgres',
-        'PASSWORD': 'Ferdi',
+        'NAME': 'aupci_db',
+        'USER': 'aupci_admin',
+        'PASSWORD': 'Brou/Issu/Dune/Ocre/Neuf',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
