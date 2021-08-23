@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Association des utilisateurs du python
+{% endblock title %}
+
+{% block varheader %}
+<!-- Hero section -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 ">
+	<div class="blog-item">
+	  <figure class="blog-thumb">
+	    <img src="{%static 'img/blog/6.jpg' %}" alt="">
+	  </figure>
+	  <div class="blog-text">
+	    <div class="post-date">23 au 25 août 2021</div>
+	    <h4 class="blog-title align-items-center"><a href="single-blog.html">Bootcamp Python</a></h4>
+	    <button class="site-btn sb-full-- sb-gradients">S'inscrire</button>
+	    <div class="post-meta">
+	      <a href=""><i class="fa fa-map-marker"></i> LARIT</a>
+	      <a href=""><i class="fa fa-clock-o"></i> 08h00 - 12h00</a>
+	      <a href=""><i class="fa fa-ticket"></i> 30 Places</a>
+	    </div>
+	  </div>
+	</div>
+
+      </div>
+      <div class="col-md-8">
+	<img src="{%static 'img/laptop.png' %}" class="laptop-image" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 hero-text">
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Hero section end -->
+
+{% endblock varheader %}
+
+{% block content %}
+<!-- About section -->
+<section class="about-section spad">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-6 about-text">
+	<h2>Pourquoi choisir Python?</h2>
+	<h5>Python est un langage qui peut s'utiliser dans de nombreux contextes.</h5>
+	<p>Il est adapté pour tout type d'utilisation grâce à des bibliothèques spécialisées à chaque traitement.</p>
+	<a href="" class="site-btn sb-gradients sbg-line mt-5">En savoir +</a>
+      </div>
+    </div>
+    <div class="about-img">
+      <img src="{%static 'img/about-img.png' %}" alt="">
+    </div>
+  </div>
+</section>
+<!-- About section end -->
+
+
+<!-- Features section -->
+<section class="features-section spad gradient-bg">
+  <div class="container text-white">
+    <div class="section-title text-center">
+      <h2>Quelques domaines d'utilisation</h2>
+      <p>où <span>Python</span> s'est brillamment illustré</p>
+    </div>
+    <div class="row">
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-mobile"></i>
+	<div class="feature-content">
+	  <h4>Application Mobile</h4>
+	  <p>Utiliser pour le développement d'application de gestion de portefeuille électronique. </p>
+	  <a href="" class="readmore"></a>
+	</div>
+      </div>
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-shield"></i>
+	<div class="feature-content">
+	  <h4>Sécurité</h4>
+	  <p>Utilisé pour la sécurisation des serveurs et des réseaux à travers des algorithmes robustes et scalables. </p>
+	  <a href="" class="readmore"></a>
+	</div>
+      </div>
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-wallet"></i>
+	<div class="feature-content">
+	  <h4>E-Paiement </h4>
+	  <p>Langage simplifiant le codage des plateformes de paiement en ligne et bien plus. </p>
+
+	</div>
+      </div>
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-server"></i>
+	<div class="feature-content">
+	  <h4>Big Data</h4>
+	  <p>Utilisé dans l'analyse et le traitement des données, des grosses données. </p>
+
+	</div>
+      </div>
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-layout-media-center-alt"></i>
+	<div class="feature-content">
+	  <h4>Machine & Deep learning</h4>
+	  <p>La technologie d’intelligence artificielle permettant aux ordinateurs d’apprendre sans avoir été programmés explicitement. </p>
+
+	</div>
+      </div>
+      <!-- feature -->
+      <div class="col-md-6 col-lg-4 feature">
+	<i class="ti-layout-slider"></i>
+	<div class="feature-content">
+	  <h4>Services web</h4>
+	  <p>Facilitateur des communications entre applications et systèmes hétérogènes. </p>
+
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Features section end -->
+
+
+<!-- Process section -->
+<section class="process-section spad">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Processus d'appentissage</h2>
+      <p>pour maitrîser Python ou un langage lambda.</p>
+    </div>
+    <div class="row">
+      <div class="col-md-4 process">
+	<div class="process-step">
+	  <h4>Documentation</h4>
+	  <p>Lecture d'article, de tutoriaux et surtout de livres spécialisés en Python. </p>
+	</div>
+      </div>
+      <div class="col-md-4 process">
+	<div class="process-step">
+	  <h4>Pratique</h4>
+	  <p>Après les fondamentaux, nous vous invitons au codage de petit à grand projet. </p>
+	</div>
+      </div>
+      <div class="col-md-4 process">
+	<div class="process-step">
+	  <h4>Expertise</h4>
+	  <p>Avec des mois de codage dans les doigts, vous devenez Expert dans le langage. </p>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Process section end -->
+<!-- Blog section -->
+<section class="blog-section spad">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>Actualiatés</h2>
+      <p>Tout sur la vie associative.</p>
+    </div>
+    <div class="row">
+      <!-- blog item -->
+      <div class="col-md-4">
+	<div class="blog-item">
+	  <figure class="blog-thumb">
+	    <img src="{%static 'img/blog/1.jpg' %}" alt="">
+	  </figure>
+	  <div class="blog-text">
+	    <div class="post-date">27 juillet 2021</div>
+	    <h4 class="blog-title"><a href="">Les merveilles du Framework Django basé sur Python</a></h4>
+	    <div class="post-meta">
+	      <a href=""><span>par</span> Admin</a>
+	      <a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+	      <a href=""><i class="fa fa-comments-o"></i> 05 commentaires</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <!-- blog item -->
+      <div class="col-md-4">
+	<div class="blog-item">
+	  <figure class="blog-thumb">
+	    <img src="{%static 'img/blog/2.jpg' %}" alt="">
+	  </figure>
+	  <div class="blog-text">
+	    <div class="post-date">28 juin 2021</div>
+	    <h4 class="blog-title"><a href="">Blockchain au coeur de l'économie nigérianne</a></h4>
+	    <div class="post-meta">
+	      <a href=""><span>par</span> Admin</a>
+	      <a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+	      <a href=""><i class="fa fa-comments-o"></i> 08 commentaires</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+      <!-- blog item -->
+      <div class="col-md-4">
+	<div class="blog-item">
+	  <figure class="blog-thumb">
+	    <img src="{%static 'img/blog/3.jpg' %}" alt="">
+	  </figure>
+	  <div class="blog-text">
+	    <div class="post-date">20 juin 2021</div>
+	    <h4 class="blog-title"><a href="">Les prouesses technologiques basées sur le langage Python.</a></h4>
+	    <div class="post-meta">
+	      <a href=""><span>par</span> Admin</a>
+	      <a href=""><i class="fa fa-heart-o"></i> 234 Likes</a>
+	      <a href=""><i class="fa fa-comments-o"></i> 08 commentaires</a>
+	    </div>
+	  </div>
+	</div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Blog section end -->
+{% include "aup_ci/equipe.html" %}
+{% endblock content %}

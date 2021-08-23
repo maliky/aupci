@@ -1,0 +1,163 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AUP |{% block title %} A définir{% endblock title %}</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Cryptocurrency Landing Page Template">
+	<meta name="keywords" content="cryptocurrency, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link  href="{%static 'img/favicon.png' %}" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"/>
+	<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>
+	<link rel="stylesheet" href="{%static  'css/themify-icons.css' %}"/>
+	<link rel="stylesheet" href="{%static 'css/animate.css' %}"/>
+	<link rel="stylesheet" href="{%static  'css/owl.carousel.css' %}"/>
+	<link rel="stylesheet" href="{%static  'css/style.css' %}"/>
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="index.html" class="site-logo">
+				<img src="{%static 'img/logo1.png' %}" alt="">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+			<a href="" class="user"><i class="fa fa-user"></i></a>
+			<a href="{% url 'aup_ci:adhesion' %}" class="site-btn">Adhésion</a>
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'aup_ci:home' %}">Accueil</a></li>
+					<li><a href="{% url 'aup_ci:event' %}">Evènement</a></li>
+					<li><a href="{% url 'aup_ci:about' %}">Qui Sommes-Nous</a></li>
+					<li><a href="{% url 'aup_ci:contact' %}">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
+{% block varheader %}
+    partie de l'entête qui varie à définir par les pages filles
+
+    {% endblock varheader %}
+
+
+{% block content %}
+  grand contenu à definir par les pages filles
+  {% endblock content %}
+
+    <!-- Newsletter section -->
+	<section class="newsletter-section gradient-bg">
+		<div class="container text-white">
+			<div class="row">
+				<div class="col-lg-7 newsletter-text">
+					<h2>Souscrivez à notre Newsletter</h2>
+					<p>Inscrivez-vous et recevez les dernières informations de l'association et du monde de Python.</p>
+				</div>
+				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
+					<form class="newsletter-form">
+						<input type="text" placeholder="Votre adresse email">
+						<button>Souscrire</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Newsletter section end -->
+
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="{%static 'img/logo.png' %}" class="mb-4" alt="">
+					<p>Association des Utilisateurs du Python.</p>
+					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | by <a href="#" target="_blank">Serenyto.dev</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Lien utiles</h5>
+					<ul>
+						<li><a href="#">Accueil</a></li>
+						<li><a href="#">Evènement</a></li>
+						<li><a href="#">Qui-sommes nous</a></li>
+						<li><a href="#">Blog</a></li>
+						<li><a href="#">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Quick Links</h5>
+					<ul>
+						<li><a href="#">Communauté Python</a></li>
+						<li><a href="#">Tutoriaux Python</a></li>
+						<li><a href="#">Application Python</a></li>
+						<li><a href="#">Projets Open Source</a></li>
+						<li><a href="#">Opportunités</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+					<h5 class="widget-title">Suivez-Nous</h5>
+					<div class="social">
+						<a href="" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="" class="telegram"><i class="fa fa-telegram"></i></a>
+						<a href="" class="instagram"><i class="fa fa-instagram"></i></a>
+						<a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
+
+					</div>
+					<div class="col-lg-8 text-center text-lg-right">
+						<ul class="footer-nav">
+
+							<li><a href="">Mentions Légales</a></li>
+							<li><a href="">Politique générale </a></li>
+							<li><a href="">contact@aup.org</a></li>
+							<li><a href="">(225) 01010101</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{%static  'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{%static  'js/owl.carousel.min.js' %}"></script>
+	<script src="{%static   'js/main.js' %}"></script>
+    <script>
+
+		setTimeout(function () {
+			if ($('#msg').length>0){
+				$('#msg').remove();
+			}
+
+		}, 3000)
+	</script>
+</body>
+</html>
