@@ -43,6 +43,15 @@ class TypeEvenement(models.Model):
         "{}".format(self.name)
 
 
+class Participant(models.Model):
+
+    nom = models.CharField(max_length=150)
+    prenoms = models.CharField(max_length=255)
+    profession = models.CharField(max_length=250)
+    telephone = models.CharField(max_length=20)
+    courriel = models.CharField(unique=True, max_length=255)
+
+
 class Evenement(TimestampUseModel):
 
     #demande = models.OneToOneField(DemandeAdhesion, on_delete=models.CASCADE, primary_key=True)
@@ -57,7 +66,7 @@ class Evenement(TimestampUseModel):
     description = models.TextField()
     #date_adhesion = models.DateTimeField()
     image_evenement = models.ImageField(upload_to ='uploads/img/events/')
-    #membres = models.ManyToManyField(Membre, related_name="evenements")
+    participants = models.ManyToManyField(Participant, related_name="evenements")
     date_debut = models.DateTimeField(blank=True, null=True) #Date et heure de début
     date_fin = models.DateTimeField(blank=True, null=True)   # Date et heure de fin
     es_publier = models.BooleanField(blank=True, default=True)
@@ -66,15 +75,6 @@ class Evenement(TimestampUseModel):
     def __str__(self):
         FORMAT = '%H:%M %d/%m/%Y'
         return '{} {} ; {} - {}'.format(self.titre, self.lieu, self.date_debut.strftime(FORMAT), self.date_fin.strftime(FORMAT))
-
-
-class Participant(models.Model):
-
-    nom = models.CharField(max_length=150)
-    prenoms = models.CharField(max_length=255)
-    profession = models.CharField(max_length=250)
-    telephone = models.CharField(max_length=20)
-    courriel = models.CharField(unique=True, max_length=255)
 
 
 
