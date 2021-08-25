@@ -15,11 +15,8 @@ class DemandeAdhesion(TimestampUseModel):
     profession = models.CharField(max_length=250)
     entreprise= models.CharField(max_length=250)
     telephone = models.CharField(max_length=20)
-    courriel = models.CharField(max_length=255)
+    courriel = models.EmailField(unique=True, max_length=255)
     traiter = models.BooleanField(default=False)
-
-
-
 
     def __str__(self):
         return '{} {} <{}>'.format(self.prenoms, self.nom, self.courriel)
@@ -37,22 +34,49 @@ class Membre(models.Model):
         return '{}'.format(self.fonction)
 
 
+class TypeEvenement(models.Model):
+    """Type d'évènement"""
+    name = models.CharField(max_length=200)
+    description = models.TextField(null=True, blank=True)
+
+    def __int__(self):
+        "{}".format(self.name)
+
+
 class Evenement(TimestampUseModel):
 
     #demande = models.OneToOneField(DemandeAdhesion, on_delete=models.CASCADE, primary_key=True)
-    LISTE_choix = [("HN", "Hackaton"), ("PN", "PyCon"), ("MP", "Meetup"), ("AR", "Atelier"), ("AG", "Assemblé Générale")]
-    createur = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    #LISTE_choix = [("HN", "Hackaton"), ("PN", "PyCon"), ("MP", "Meetup"), ("AR", "Atelier"), ("AG", "Assemblé Générale")]
+    createur = models.ForeignKey(User, on_delete=models.CASCADE)
+    type_evenement = models.ForeignKey(TypeEvenement, on_delete=models.CASCADE)
     titre = models.CharField(max_length=255)
     lieu = models.CharField(max_length=255)
+    description_lieu = models.CharField(max_length=255, blank=True, null=True)
     #type_evenement = models.CharField(max_length=255)
-    type_evenement = models.CharField(max_length=2, choices=LISTE_choix, default="MP")
+    #type_evenement = models.CharField(max_length=2, choices=LISTE_choix, default="MP")
     description = models.TextField()
-    date_adhesion = models.DateTimeField()
+    #date_adhesion = models.DateTimeField()
     image_evenement = models.ImageField(upload_to ='uploads/img/events/')
-    membres = models.ManyToManyField(Membre, related_name="evenements")
+    #membres = models.ManyToManyField(Membre, related_name="evenements")
+    date_debut = models.DateTimeField(blank=True, null=True) #Date et heure de début
+    date_fin = models.DateTimeField(blank=True, null=True)   # Date et heure de fin
+    es_publier = models.BooleanField(blank=True, default=True)
+    nombre_place = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-        return '{} {}'.format(self.titre, self.lieu)
+        FORMAT = '%H:%M %d/%m/%Y'
+        return '{} {} ; {} - {}'.format(self.titre, self.lieu, self.date_debut.strftime(FORMAT), self.date_fin.strftime(FORMAT))
+
+
+class Participant(models.Model):
+
+    nom = models.CharField(max_length=150)
+    prenoms = models.CharField(max_length=255)
+    profession = models.CharField(max_length=250)
+    telephone = models.CharField(max_length=20)
+    courriel = models.CharField(unique=True, max_length=255)
+
+
 
 
 class AbonneNew(models.Model):
