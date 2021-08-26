@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .forms import ContactForm, AdhesionForm, AbonneNewForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
@@ -94,11 +94,59 @@ def event(request):
     return render(request, "aup_ci/event.html", {'newform': new_form, 'event_aVenir': aVenir, 'event_passer': passer})
 
 
-def show_event(request, event_id=0):
+def show_event_Passer(request, event_id=0):
     if event_id == 0:
         return HttpResponseRedirect('/event')
     else:
-        print("ID_EVENT={} de Type".format(event_id, type(event_id)))
+        #print("ID_EVENT={} de Type".format(event_id, type(event_id)))
+        evenement = get_object_or_404(Evenement, pk=event_id)
+        now = timezone.now()
+        es_a_venir = 1
+        if evenement.date_debut < now:
+            es_a_venir = 0
+            #new_form = AbonneNewForm(None)
+            if request.method == 'POST':
+
+                # create a form instance and populate it with data from the request:
+                new_form = AbonneNewForm(request.POST)
+                # check whether it's valid:
+                if new_form.is_valid():
+                    # process the data in form.cleaned_data as required
+                    # Save in the data base
+                    new_form.save()
+                    # add flashmessages
+                    messages.add_message(request, messages.SUCCESS,
+                                         "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+                    # redirect to a new URL:
+                    return HttpResponseRedirect('/event/passe/'+str(event_id))
+
+            # if a GET (or any other method) we'll create a blank form
+            else:
+                new_form = AbonneNewForm(None)
+            #return render(request, "aup_ci/index.html", {'newform': new_form})
+            return render(request, "aup_ci/eventDetail.html", {'newform': new_form, 'evenement': evenement, 'es_a_venir': es_a_venir})
+
+        else:
+            return HttpResponseRedirect('/event/avenir/'+str(event_id))
+
+        #return  render(request, "aup_ci/eventDetail.html", {'newform': new_form})
+
+
+def show_event_Avenir(request, event_id=0):
+    if event_id == 0:
+        return HttpResponseRedirect('/event')
+    else:
+        #print("ID_EVENT={} de Type".format(event_id, type(event_id)))
+        evenement = get_object_or_404(Evenement, pk=event_id)
+        now = timezone.now()
+        es_a_venir = 0
+        if evenement.date_debut > now:
+            es_a_venir = 1
+            new_form = AbonneNewForm(None)
+            return render(request, "aup_ci/eventDetail.html", {'newform': new_form, 'evenement':evenement, 'es_a_venir': es_a_venir})
+        else:
+            return HttpResponseRedirect('/event/avenir/'+str(event_id))
+
         new_form = AbonneNewForm(None)
         return  render(request, "aup_ci/eventDetail.html", {'newform': new_form})
 

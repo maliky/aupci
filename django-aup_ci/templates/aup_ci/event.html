@@ -81,9 +81,9 @@ Evènement de l'Association
 								</figure>
 								<div class="blog-text">
 									<div class="post-date">{{evenement.date_debut}}</div>
-									<h2 class="blog-title"><a href="single-blog.html">{{evenement.titre}}</a></h2>
-									<p>{{evenement.titre}}</p>
-									<a href="{% url  'aup_ci:event_show' event_id=evenement.id %}" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
+									<h2 class="blog-title"><a href="{% url  'aup_ci:venir_event_show' event_id=evenement.id %}">{{evenement.titre}}</a></h2>
+									<p>{{evenement.description|truncatewords:10}}...</p>
+									<a href="{% url  'aup_ci:venir_event_show' event_id=evenement.id %}" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -114,9 +114,9 @@ Evènement de l'Association
 								</figure>
 								<div class="blog-text">
 									<div class="post-date">{{evenement.date_debut}}</div>
-									<h2 class="blog-title"><a href="single-blog.html">{{evenement.titre}} en attendant</a></h2>
-									<p>{{evenement.titre}}  en attendant</p>
-									<a href="" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
+									<h2 class="blog-title"><a href="{% url  'aup_ci:passe_event_show' event_id=evenement.id %}">{{evenement.titre}}</a></h2>
+									<p>{{evenement.description|truncatewords:10}}</p>
+									<a href="{% url  'aup_ci:passe_event_show' event_id=evenement.id %}" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
 								</div>
 							</div>
 						</div>

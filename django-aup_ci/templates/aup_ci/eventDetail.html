@@ -49,12 +49,26 @@ Evènement de l'Association
 
 					 <div class="row">
                 <div class="col-md-12">
-					<p>
+					{%if es_a_venir == 0%}
+					   	<div class="blog-item bi-feature">
+								<figure class="blog-thumb">
+									<img src="{{evenement.image_evenement.url}}" alt="">
+								</figure>
+								<div class="blog-text">
+									<div class="post-date">Période de l'évenement: {{evenement.date_debut}} - {{evenement.date_fin}}</div>
+									<h2 class="blog-title">{{evenement.titre}}</h2>
+									<p> {{evenement.description}} </p>
+									<a href="{% url  'aup_ci:contact'%}" class="readmore">Veuillez nous contacter pour des infos complémentaires <i class="fa fa-angle-double-right"></i></a>
+								</div>
+							</div>
+					 {%else %}
+					  <p>
                     <h1>
-                       "Hello! Affichage d'une page en cours de construction..."
+                       "Hello! Page de consultation de l'évènement et d'ajout d'un participant en cours!!!!"
 					<hr>
                     </h1>
 					</p>
+					{%endif%}
                 </div>
             </div>
 
