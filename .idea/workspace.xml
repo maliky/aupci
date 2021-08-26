@@ -38,22 +38,23 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/django-aup_ci/site_static/img/member" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django-aup_ci/templates/aup_ci" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
       <recent name="D:\My_Django_Projects\aup_ci_repository" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -125,6 +126,12 @@
       <workItem from="1629649971591" duration="10332000" />
       <workItem from="1629709701819" duration="14102000" />
       <workItem from="1629737782146" duration="686000" />
+      <workItem from="1629826915679" duration="16000" />
+      <workItem from="1629830414804" duration="598000" />
+      <workItem from="1629876169401" duration="6617000" />
+      <workItem from="1629883894042" duration="592000" />
+      <workItem from="1629884620365" duration="83000" />
+      <workItem from="1629884969355" duration="25528000" />
     </task>
     <servers />
   </component>

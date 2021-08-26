@@ -51,78 +51,14 @@ Evènement de l'Association
                 <div class="col-md-12">
 					<p>
                     <h1>
-                        Evènements à venir
-                      <!--  <a class="ical btn btn-default btn-xs" href="/events/calendar.ics">ICAL</a>
-                        <a class="ical btn btn-default btn-xs" href="/events/map/">MAP</a>-->
+                       "Hello! Affichage d'une page en cours de construction..."
 					<hr>
                     </h1>
 					</p>
                 </div>
             </div>
 
-					<div class="row">
-						<!-- blog item -->
-					{% if event_aVenir|length == 0 %}
-						<div class="col-md-6">
-							<div class="blog-item bi-feature">
-								<div class="blog-text">
 
-									<h2 class="blog-title"> Aucun évènement à venir pour l'instant. Restez à l'écoute</h2>
-
-								</div>
-							</div>
-						</div>
-					{%else %}
-						{% for evenement in event_aVenir %}
-						         	<div class="col-md-6">
-							<div class="blog-item bi-feature">
-								<figure class="blog-thumb">
-									<img src="{{evenement.image_evenement.url}}" alt="" class="scaleImg">
-								</figure>
-								<div class="blog-text">
-									<div class="post-date">{{evenement.date_debut}}</div>
-									<h2 class="blog-title"><a href="single-blog.html">{{evenement.titre}}</a></h2>
-									<p>{{evenement.titre}}</p>
-									<a href="{% url  'aup_ci:event_show' event_id=evenement.id %}" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
-								</div>
-							</div>
-						</div>
-
-						{% endfor %}
-						{%endif %}
-						</div>
-							<!-- blog item -->
-
-						 <div class="row">
-                <div class="col-md-12">
-					<p>
-                    <h2>
-                       Quelques  Evènements Passés
-					<hr>
-                    </h2>
-					</p>
-                </div>
-            </div>
-					<div class="row">
-
-						<!-- blog item -->
-				        {% for evenement in event_passer %}
-						         	<div class="col-md-6">
-							<div class="blog-item bi-feature">
-								<figure class="blog-thumb">
-									<img src="{{evenement.image_evenement.url}}" alt="" class="scaleImg">
-								</figure>
-								<div class="blog-text">
-									<div class="post-date">{{evenement.date_debut}}</div>
-									<h2 class="blog-title"><a href="single-blog.html">{{evenement.titre}} en attendant</a></h2>
-									<p>{{evenement.titre}}  en attendant</p>
-									<a href="" class="readmore">En savoir + <i class="fa fa-angle-double-right"></i></a>
-								</div>
-							</div>
-						</div>
-
-						{% endfor %}
-					</div>
 				</div>
 				<div class="col-lg-4 col-md-4 sideber pt-5 pt-lg-0">
 					<!--<div class="widget-area">

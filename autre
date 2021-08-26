@@ -14,6 +14,11 @@ Liens utiles utilisées lors du codes :
     1. https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html
     2. https://www.ordinarycoders.com/blog/article/render-a-django-form-with-bootstrap
 
+- app ou pages pour seminaires et conférences :
+    1. https://framagit.org/manu/django-seminar/-/tree/master
+    2. https://github.com/lucasvo/django-event-app
+    3. https://www.vinta.com.br/blog/2017/advanced-django-querying-sorting-events-date/
 
-
+- Snippet pour calendar events:
+    1. https://djangosnippets.org/snippets/2223/
 

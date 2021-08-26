@@ -22,6 +22,7 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('about', views.about, name="about"),
     path('event', views.event, name="event"),
+    path('event/<int:event_id>', views.show_event, name="event_show"),
     path('contact', views.contact, name="contact"),
     path('adhesion', views.adhesion, name="adhesion"),
     path('admin/', admin.site.urls),

@@ -2203,3 +2203,10 @@ body {
 	width: auto;
 	max-height: 520px;
 }
+.ical.btn{font-size:12px;padding:1px 5px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
+.scaleImg{
+    max-width:350px;
+    max-height:350px;
+    width:auto;
+    height:auto;
+}

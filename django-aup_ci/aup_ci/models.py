@@ -2,8 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class TimestampUseModel(models.Model):
-    Date_creation = models.DateTimeField(auto_now_add=True)
-    Date_Mise_a_Jour = models.DateTimeField(auto_now=True)
+    date_creation = models.DateTimeField(auto_now_add=True)
+    date_Mise_a_Jour = models.DateTimeField(auto_now=True)
 
     class Meta:
         abstract= True
@@ -36,21 +36,11 @@ class Membre(models.Model):
 
 class TypeEvenement(models.Model):
     """Type d'évènement"""
-    name = models.CharField(max_length=200)
+    nom = models.CharField(max_length=200)
     description = models.TextField(null=True, blank=True)
 
-    def __int__(self):
-        "{}".format(self.name)
-
-
-class Participant(models.Model):
-
-    nom = models.CharField(max_length=150)
-    prenoms = models.CharField(max_length=255)
-    profession = models.CharField(max_length=250)
-    telephone = models.CharField(max_length=20)
-    courriel = models.CharField(unique=True, max_length=255)
-
+    def __str__(self):
+        return "{}".format(str(self.nom))
 
 class Evenement(TimestampUseModel):
 
@@ -66,7 +56,6 @@ class Evenement(TimestampUseModel):
     description = models.TextField()
     #date_adhesion = models.DateTimeField()
     image_evenement = models.ImageField(upload_to ='uploads/img/events/')
-    participants = models.ManyToManyField(Participant, related_name="evenements")
     date_debut = models.DateTimeField(blank=True, null=True) #Date et heure de début
     date_fin = models.DateTimeField(blank=True, null=True)   # Date et heure de fin
     es_publier = models.BooleanField(blank=True, default=True)
@@ -77,6 +66,17 @@ class Evenement(TimestampUseModel):
         return '{} {} ; {} - {}'.format(self.titre, self.lieu, self.date_debut.strftime(FORMAT), self.date_fin.strftime(FORMAT))
 
 
+class Participant(models.Model):
+
+    nom = models.CharField(max_length=150)
+    prenoms = models.CharField(max_length=255)
+    profession = models.CharField(max_length=250)
+    telephone = models.CharField(max_length=20)
+    courriel = models.CharField(unique=True, max_length=255)
+    evenements = models.ManyToManyField(Evenement, related_name="participants")
+
+    def __str__(self):
+        return '{} {} <{}>'.format(self.prenoms, self.nom, self.courriel)
 
 
 class AbonneNew(models.Model):
