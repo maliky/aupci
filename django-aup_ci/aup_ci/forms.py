@@ -10,6 +10,15 @@ class ContactForm(forms.Form):
     message = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder': 'Préoccupation*'}))
 
 
+class ParticiperForm(forms.Form):
+    choix = [("sp", "Simple participant"), ("pt", "Présentateur"), ("cr", "Compétiteur à Hackathon"), ("pe", "Partenaire, sponsor"), ("ar", "Annonceur")]
+    motif = forms.ChoiceField(label="Participer en qualité de* :", choices=choix, required=True)
+
+    #forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Nom*', 'class': 'check-form'}))
+    courriel = forms.CharField(label='Email* :', widget=forms.EmailInput(attrs={'placeholder': 'ex: toto@gmail.com', 'class': 'check-form'}))
+    message = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder': "Laissez-nous plus de précisions, vous recevrez plus d'informations*"}))
+
+
 
 class AdhesionForm(ModelForm):
 

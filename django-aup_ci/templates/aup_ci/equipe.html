@@ -6,7 +6,12 @@
 			<div class="row">
 				<div class="col-sm-6 col-md-6 col-lg-3">
 					<div class="fact">
-						<h2>16</h2>
+						<h2>{%if nombre_membre >= 16 %}
+							  {{nombre_membre}}
+						     {%else %}
+							  16
+							 {%endif%}
+						  </h2>
 						<p>Membres <br> actifs</p>
 						<i class="ti-user"></i>
 					</div>
@@ -50,64 +55,64 @@
 			<!-- Team member -->
 			<div class="member">
 				<div class="member-text">
-					<div class="member-img set-bg" data-setbg="{%static 'img/member/1.jpg' %}"></div>
+					<div class="member-img set-bg" data-setbg="{%static 'img/member/1.png' %}"></div>
 					<h2>Malik KONE</h2>
 					<span>Président de l'Association</span>
 				</div>
-				<div class="member-social">
+				<!--<div class="member-social">
 					<a href=""><i class="fa fa-facebook"></i></a>
 					<a href=""><i class="fa fa-linkedin"></i></a>
 					<a href=""><i class="fa fa-twitter"></i></a>
-				</div>
+				</div>-->
 				<div class="member-info">
-					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/1.jpg' %}"></div>
+					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/1.png' %}"></div>
 					<div class="member-meta">
 						<h2>Malik KONE</h2>
 					<span>Président de l'Association</span>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p> Malik KONE est Docteur en Informatique de l'INP-HB et de l'Université du Mans (en France). Il est grand passionné du langage Python.</p>
 				</div>
 			</div>
 			<!-- Team member -->
 			<div class="member">
 				<div class="member-text">
-					<div class="member-img set-bg" data-setbg="{%static 'img/member/2.jpg' %}"></div>
+					<div class="member-img set-bg" data-setbg="{%static 'img/member/2.png' %}"></div>
 					<h2>Ferdinand A. ATTA</h2>
 						<span>Vice-Président</span>
 				</div>
-				<div class="member-social">
+				<!--<div class="member-social">
 					<a href=""><i class="fa fa-facebook"></i></a>
 					<a href=""><i class="fa fa-linkedin"></i></a>
 					<a href=""><i class="fa fa-twitter"></i></a>
-				</div>
+				</div>-->
 				<div class="member-info">
-					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/2.jpg' %}"></div>
+					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/2.png' %}"></div>
 					<div class="member-meta">
 						<h2>Ferdinand A. ATTA</h2>
 						<span>Vice-Président</span>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p> Ferdinand A. ATTA est un Doctorant en Informatique de l'INP-HB et passionné du langage Python depuis 2016.</p>
 				</div>
 			</div>
 			<!-- Team member -->
 			<div class="member">
 				<div class="member-text">
-					<div class="member-img set-bg" data-setbg="{%static 'img/member/3.jpg' %}"></div>
+					<div class="member-img set-bg" data-setbg="{%static 'img/member/3.png' %}"></div>
 					<h2>Wilfried M. MORIE</h2>
-					<span>Sécrétaire</span>
+					<span>Sécrétaire Générale</span>
 				</div>
-				<div class="member-social">
+				<!--<div class="member-social">
 					<a href=""><i class="fa fa-facebook"></i></a>
 					<a href=""><i class="fa fa-linkedin"></i></a>
 					<a href=""><i class="fa fa-twitter"></i></a>
-				</div>
+				</div>-->
 				<div class="member-info">
-					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/3.jpg' %}"></div>
+					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/3.png' %}"></div>
 					<div class="member-meta">
 						<h2>Wilfried M. MORIE</h2>
-					     <span>Sécrétaire</span>
+					     <span>Sécrétaire< Générale/span>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Wilfried M. MORIE est Docteur en Informatique de l'INP-HB, spécialisé en jeux éducatifs et passionné du langage Python.</p>
 				</div>
 			</div>
 			<!-- Team member -->
@@ -117,18 +122,18 @@
 					<h2>Rosalie W.F. TOKPA</h2>
 					<span>Trésorière Générale</span>
 				</div>
-				<div class="member-social">
+				<!--<div class="member-social">
 					<a href=""><i class="fa fa-facebook"></i></a>
 					<a href=""><i class="fa fa-linkedin"></i></a>
 					<a href=""><i class="fa fa-twitter"></i></a>
-				</div>
+				</div>-->
 				<div class="member-info">
 					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/4.jpg' %}"></div>
 					<div class="member-meta">
 						<h2>Rosalie W.F. TOKPA</h2>
 					<span>Trésorière Générale</span>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Rosalie W.F. TOKPA est une Doctorante en Informatique de l'Université Félix Houphouët-Boigny de Cocody qui vient de démarrer une histoire d'amour avec le langage Python.</p>
 				</div>
 			</div>
 			<!-- Team member -->
@@ -138,18 +143,18 @@
 					<h2>Chimène A. MONSAN </h2>
 					<span>Vice-Trésorière Générale</span>
 				</div>
-				<div class="member-social">
-					<a href=""><i class="fa fa-facebook"></i></a>
-					<a href=""><i class="fa fa-linkedin"></i></a>
-					<a href=""><i class="fa fa-twitter"></i></a>
-				</div>
+				<!--<div class="member-social">
+					<a href=""><i class="fab fa-facebook"></i></a>
+					<a href=""><i class="fab fa-linkedin"></i></a>
+					<a href=""><i class="fab fa-twitter"></i></a>
+				</div>-->
 				<div class="member-info">
 					<div class="member-img mf set-bg" data-setbg="{%static 'img/member/5.jpg' %}"></div>
 					<div class="member-meta">
 						<h2>Chimène A. MONSAN</h2>
 					<span>Vice-Trésorière Générale</span>
 					</div>
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Chimène A. MONSAN est une Doctorante en Informatique de l'INP-HB qui vient de démarrer une histoire d'amour avec le langage Python.</p>
 				</div>
 			</div>
 		</div>

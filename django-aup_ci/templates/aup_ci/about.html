@@ -44,7 +44,7 @@ Qui sommes-nous?
 			<div class="row">
 				<div class="col-lg-6 offset-lg-6 about-text">
 					<h2>L'AUP en Bref</h2>
-					<h5> Vulgarisons le language Python eb Côte d'Ivoire</h5>
+					<h5> Vulgarisons le language Python en Côte d'Ivoire</h5>
 					<p>  L’« A.U.P» , Association des Utilisateurs du Python,
 						fondée le 08 juillet 2021, a pour but la vulgarisation du langage de programmation python et de ses applications en Côte d'Ivoire.
 						A cet effet, elle organise regulièrement des activités telle que les hackatons, des meetups, des pycons, etc.
@@ -60,4 +60,7 @@ Qui sommes-nous?
 	</section>
 	<!-- About section end -->
     {% include "aup_ci/equipe.html" %}
+{%block news %}
+{% include "aup_ci/newsletter.html" %}
+{% endblock news %}
   {% endblock content %}

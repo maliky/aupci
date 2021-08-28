@@ -1,34 +1,43 @@
 from django.shortcuts import render, get_object_or_404
-from .forms import ContactForm, AdhesionForm, AbonneNewForm
+#from django.shortcuts import get_object_or_404
+from .forms import ContactForm, AdhesionForm, AbonneNewForm, ParticiperForm
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.utils import timezone
 from django.db import models
 from django.db.models import F, Q
-from .models import Evenement
+from .models import Evenement, Membre
+from .helpers import base_navigue_view
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
-    if request.method == 'POST':
-
-        # create a form instance and populate it with data from the request:
-        new_form = AbonneNewForm(request.POST)
-        # check whether it's valid:
-        if new_form.is_valid():
-            # process the data in form.cleaned_data as required
-            # Save in the data base
-            new_form.save()
-            # add flashmessages
-            messages.add_message(request, messages.SUCCESS,
-                                     "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
-            # redirect to a new URL:
-            return HttpResponseRedirect('/')
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        new_form = AbonneNewForm(None)
-    return render(request, "aup_ci/index.html", {'newform': new_form})
+   render_page = "aup_ci/index.html"
+   http_redirect = "/"
+   now = timezone.now()
+   evenement_avenir = Evenement.objects.filter(date_debut__gte=now).order_by('date_debut')
+   membres = Membre.objects.all()
+   nombre_membre = 0
+   if len(list(membres)) > 0:
+       nombre_membre = len(list(membres))
+   #print(evenement_avenir)
+   plus_proche = list(evenement_avenir)[0]
+   #print(plus_proche)
+   data = {'evenement': plus_proche, 'nombre_membre': nombre_membre}
+   http_response = base_navigue_view(request, render_page, http_redirect, data)
+   return http_response
 
 def about(request):
+    render_page = "aup_ci/about.html"
+    http_redirect = "/about"
+    membres = Membre.objects.all()
+    nombre_membre = 0
+    if len(list(membres)) > 0:
+        nombre_membre = len(list(membres))
+    data = {'nombre_membre': nombre_membre}
+    http_response= base_navigue_view(request, render_page, http_redirect, data)
+    return  http_response
+
+def event(request, page=1):
     if request.method == 'POST':
 
         # create a form instance and populate it with data from the request:
@@ -42,28 +51,7 @@ def about(request):
             messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
             # redirect to a new URL:
-            return  HttpResponseRedirect('/about')
-
-    # if a GET (or any other method) we'll create a blank form
-    else:
-        new_form = AbonneNewForm(None)
-    return render(request, "aup_ci/about.html", {'newform': new_form})
-
-def event(request):
-    if request.method == 'POST':
-
-        # create a form instance and populate it with data from the request:
-        new_form = AbonneNewForm(request.POST)
-        # check whether it's valid:
-        if new_form.is_valid():
-            # process the data in form.cleaned_data as required
-            # Save in the data base
-            new_form.save()
-            # add flashmessages
-            messages.add_message(request, messages.SUCCESS,
-                                     "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
-            # redirect to a new URL:
-            return HttpResponseRedirect('/event')
+            return HttpResponseRedirect('/event/'+str(page))
 
     # if a GET (or any other method) we'll create a blank form
     else:
@@ -88,10 +76,21 @@ def event(request):
                 aVenir.append(evenement)
             else:
                 passer.append(evenement)
-        print(aVenir)
-        print(passer)
+        #print(aVenir)
+        #print(passer)
+        #page_number = request.GET.get('page')
+        page_number = page
+        print("PAGE NUMBER", page_number)
+        paginator = Paginator(passer, 1)  # Show 25 contacts per page.
+        try:
+            past_events = paginator.get_page(page_number)
+        except PageNotAnInteger:
+            past_events = paginator.get_page(1)
+        except EmptyPage:
+            past_events = paginator.get_page(paginator.num_pages)
+        print("PastEvent", past_events )
         new_form = AbonneNewForm(None)
-    return render(request, "aup_ci/event.html", {'newform': new_form, 'event_aVenir': aVenir, 'event_passer': passer})
+    return render(request, "aup_ci/event.html", {'newform': new_form, 'event_aVenir': aVenir, 'event_passer': past_events})
 
 
 def show_event_Passer(request, event_id=0):
@@ -105,27 +104,11 @@ def show_event_Passer(request, event_id=0):
         if evenement.date_debut < now:
             es_a_venir = 0
             #new_form = AbonneNewForm(None)
-            if request.method == 'POST':
-
-                # create a form instance and populate it with data from the request:
-                new_form = AbonneNewForm(request.POST)
-                # check whether it's valid:
-                if new_form.is_valid():
-                    # process the data in form.cleaned_data as required
-                    # Save in the data base
-                    new_form.save()
-                    # add flashmessages
-                    messages.add_message(request, messages.SUCCESS,
-                                         "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
-                    # redirect to a new URL:
-                    return HttpResponseRedirect('/event/passe/'+str(event_id))
-
-            # if a GET (or any other method) we'll create a blank form
-            else:
-                new_form = AbonneNewForm(None)
-            #return render(request, "aup_ci/index.html", {'newform': new_form})
-            return render(request, "aup_ci/eventDetail.html", {'newform': new_form, 'evenement': evenement, 'es_a_venir': es_a_venir})
-
+            render_page = "aup_ci/eventDetail.html"
+            http_redirect = '/event/passe/'+str(event_id)
+            data = {'evenement': evenement, 'es_a_venir': es_a_venir}
+            httpresponse = base_navigue_view(request, render_page, http_redirect, data)
+            return httpresponse
         else:
             return HttpResponseRedirect('/event/avenir/'+str(event_id))
 
@@ -142,13 +125,46 @@ def show_event_Avenir(request, event_id=0):
         es_a_venir = 0
         if evenement.date_debut > now:
             es_a_venir = 1
-            new_form = AbonneNewForm(None)
-            return render(request, "aup_ci/eventDetail.html", {'newform': new_form, 'evenement':evenement, 'es_a_venir': es_a_venir})
-        else:
-            return HttpResponseRedirect('/event/avenir/'+str(event_id))
+            if request.method == 'POST':
+                if "detail_event" in request.POST:
+                    # create a form instance and populate it with data from the request:
+                    other_form = ParticiperForm(request.POST)
+                    # check whether it's valid:
+                    if other_form.is_valid():
+                        # process the data in form.cleaned_data as required
+                        # Envoyer un email à l'administrateur
 
-        new_form = AbonneNewForm(None)
-        return  render(request, "aup_ci/eventDetail.html", {'newform': new_form})
+                        # add flashmessages
+                        messages.add_message(request, messages.SUCCESS,
+                                             "Votre demande de participation a été enregistrée et sera traitée")
+                        # redirect to a new URL:
+                        return HttpResponseRedirect('/event/avenir/'+str(event_id))
+                elif "abonne" in request.POST:
+                    # create a form instance and populate it with data from the request:
+                    new_form = AbonneNewForm(request.POST)
+                    # check whether it's valid:
+                    if new_form.is_valid():
+                        # process the data in form.cleaned_data as required
+                        # Save in the data base
+                        new_form.save()
+                        # add flashmessages
+                        messages.add_message(request, messages.SUCCESS,
+                                             "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+                        # Envoie de mail à l'administrateur et au demander
+                        # redirect to a new URL:
+                        return HttpResponseRedirect('/event/avenir/'+str(event_id))
+            else:
+                render_page = "aup_ci/eventDetail.html"
+                http_redirect = '/event/avenir/'+str(event_id)
+                form_event = ParticiperForm(None)
+                data = {'evenement': evenement, 'es_a_venir': es_a_venir, 'event_form': form_event}
+                httpresponse = base_navigue_view(request, render_page, http_redirect, data)
+                return httpresponse
+        else:
+            return HttpResponseRedirect('/event/passe/'+str(event_id))
+
+        #new_form = AbonneNewForm(None)
+        #return  render(request, "aup_ci/eventDetail.html", {'newform': new_form})
 
 
 
@@ -161,11 +177,10 @@ def contact(request):
             # check whether it's valid:
             if contact_form.is_valid():
                 # process the data in form.cleaned_data as required
-                # Save in the data base
-                contact_form.save()
+                #Envoyer un mail
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
-                                     "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+                                     "Votre préoccupation a été enregistrée et sera traitée rapidement")
                 # redirect to a new URL:
                 return HttpResponseRedirect('/contact')
         elif "abonne" in request.POST:
@@ -218,6 +233,7 @@ def adhesion(request):
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+                # Envoie de mail à l'administrateur et au demander
                 # redirect to a new URL:
                 return HttpResponseRedirect('/adhesion')
 

@@ -42,19 +42,19 @@
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -69,7 +69,29 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.devoir2python">
+    <configuration name="devoir2python" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="aup_ci_repository" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$USER_HOME$/Downloads" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$USER_HOME$/Downloads/devoir2python.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="testPath" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="aup_ci_repository" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -94,6 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.devoir2python" />
         <item itemvalue="Python.testPath" />
       </list>
     </recent_temporary>
@@ -132,7 +155,11 @@
       <workItem from="1629883894042" duration="592000" />
       <workItem from="1629884620365" duration="83000" />
       <workItem from="1629884969355" duration="25528000" />
-      <workItem from="1629960920957" duration="5065000" />
+      <workItem from="1629960920957" duration="9126000" />
+      <workItem from="1629998554346" duration="16000" />
+      <workItem from="1630006961460" duration="11215000" />
+      <workItem from="1630049875115" duration="4706000" />
+      <workItem from="1630064999106" duration="23731000" />
     </task>
     <servers />
   </component>
@@ -153,6 +180,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/aup_ci_repository$devoir2python.coverage" NAME="devoir2python Coverage Results" MODIFIED="1629987779844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$USER_HOME$/Downloads" />
     <SUITE FILE_PATH="coverage/aup_ci_repository$testPath.coverage" NAME="testPath Coverage Results" MODIFIED="1629030925856" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/config" />
   </component>
 </project>

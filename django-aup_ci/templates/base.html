@@ -16,11 +16,13 @@
 
 	<!-- Stylesheets -->
 	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"/>
-	<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>
+	<!--<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>-->
 	<link rel="stylesheet" href="{%static  'css/themify-icons.css' %}"/>
 	<link rel="stylesheet" href="{%static 'css/animate.css' %}"/>
 	<link rel="stylesheet" href="{%static  'css/owl.carousel.css' %}"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{%static  'css/style.css' %}"/>
+
 
 
 	<!--[if lt IE 9]>
@@ -47,7 +49,7 @@
 			<nav class="main-menu">
 				<ul class="menu-list">
 					<li><a href="{% url 'aup_ci:home' %}">Accueil</a></li>
-					<li><a href="{% url 'aup_ci:event' %}">Evènement</a></li>
+					<li><a href="{% url 'aup_ci:event' page=1 %}">Evènement</a></li>
 					<li><a href="{% url 'aup_ci:about' %}">Qui Sommes-Nous</a></li>
 					<li><a href="{% url 'aup_ci:contact' %}">Contact</a></li>
 				</ul>
@@ -63,28 +65,12 @@
 
 {% block content %}
   grand contenu à definir par les pages filles
+	{%block news %}
+
+	{% endblock news %}
   {% endblock content %}
 
-    <!-- Newsletter section -->
-	<section class="newsletter-section gradient-bg">
-		<div class="container text-white">
-			<div class="row">
-				<div class="col-lg-7 newsletter-text">
-					<h2>Souscrivez à notre Newsletter</h2>
-					<p>Inscrivez-vous et recevez les dernières informations de l'association et du monde de Python.</p>
-				</div>
-				<div class="col-lg-5 col-md-8 offset-lg-0 offset-md-2">
-					<form class="newsletter-form" method="post">
-						{% csrf_token %}
-						<!--<input type="text" placeholder="Votre adresse email">-->
-                        {{ newform.courriel|as_crispy_field }}
-						<button type="submit" name="abonne">Souscrire</button>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Newsletter section end -->
+
 
 
 
@@ -96,20 +82,20 @@
 					<img src="{%static 'img/logo.png' %}" class="mb-4" alt="">
 					<p>Association des Utilisateurs du Python.</p>
 					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | by <a href="#" target="_blank">Serenyto.dev</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | by <a href="#" target="_blank">aup.ci-dev</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
 				</div>
 				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
 					<h5 class="widget-title">Lien utiles</h5>
 					<ul>
 						<li><a href="{% url 'aup_ci:home'  %}">Accueil</a></li>
-						<li><a href="{% url 'aup_ci:event' %}">Evènement</a></li>
+						<li><a href="{% url 'aup_ci:event' page=1 %}">Evènement</a></li>
 						<li><a href="{% url 'aup_ci:about'  %}">Qui-sommes nous</a></li>
 						<li><a href="{% url 'aup_ci:contact'  %}">Contact</a></li>
 					</ul>
 				</div>
 				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
-					<h5 class="widget-title">Links externes</h5>
+					<h5 class="widget-title">Liens externes</h5>
 					<ul>
 						<li><a href="https://www.afpy.org/" target="_blank">Association Francophone Python (AFPy)</a></li>
 						<li><a href="https://www.pycon.fr/" target="_blank">PyCon Fr</a></li>
@@ -120,11 +106,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
 				</div>
 				<div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
 					<h5 class="widget-title">Suivez-Nous</h5>
-					<div class="social">
-						<a href="" class="facebook"><i class="fa fa-facebook"></i></a>
-						<a href="" class="telegram"><i class="fa fa-telegram"></i></a>
-						<a href="" class="instagram"><i class="fa fa-instagram"></i></a>
-						<a href="" class="twitter"><i class="fa fa-twitter"></i></a>
+					<div class="social-menu">
+						<!--<a href="" class="facebook"><i class="fab fa-facebook"></i></a>
+						<a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+						<a href="" class="youtube"><i class="fab fa-youtube"></i></a>-->
+						<li><a href="https://facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a></li>
+
+<li><a href="https://twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a></li>
 					</div>
 				</div>
 			</div>
@@ -159,7 +148,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous 
 				$('#msg').remove();
 			}
 
-		}, 3000)
+		}, 5000)
 	</script>
 </body>
 </html>

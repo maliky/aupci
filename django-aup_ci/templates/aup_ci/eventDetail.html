@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% load static %}
 {% block title %}
-Evènement de l'Association
+Evènement en détails
 {% endblock title %}
 
 {% block varheader %}
@@ -25,7 +26,7 @@ Evènement de l'Association
 	<section class="blog-page spad">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-8 col-md-8">
+				<div class="col-lg-12 col-md-12">
 
 			<div class="row">
 					<div class="col-lg-8">
@@ -64,25 +65,113 @@ Evènement de l'Association
 					 {%else %}
 					  <p>
                     <h1>
-                       "Hello! Page de consultation de l'évènement et d'ajout d'un participant en cours!!!!"
+                       {{evenement.titre}}
 					<hr>
                     </h1>
 					</p>
+					<div>
+						<p>
+							<figure class="blog-thumb">
+									<img src="{{evenement.image_evenement.url}}" alt="">
+								</figure>
+						</p>
+						<p>
+
+						</p>
+
+					</div>
+					<div>
+						<p>
+							<b>Période :</b> {{evenement.date_debut}} - {{evenement.date_fin}}
+						</p>
+					</div>
+						<div>
+						<p>
+							<b>Lieu :</b> {{evenement.lieu}}
+						</p>
+					</div>
+					<div>
+						<p>
+							<b>Descriptif du lieu :</b> {{evenement.date_debut}} - {{evenement.date_fin}}
+						</p>
+					</div>
+					<div>
+						<p align="justify">
+							<b>A propos de "{{evenement.titre}}" :</b> <h4>{{evenement.description}}</h4>
+						</p>
+					</div>
+					<div>
+						<p>
+							 <h1>
+                       Formulaire de participation
+					<hr>
+                    </h1>
+						</p>
+                        <form class="contact-form" method="post">
+						{% csrf_token %}
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									{{ event_form.motif|as_crispy_field }}
+									<!-- <input class="check-form" type="text" placeholder="Nom*:"> -->
+									<span><i class="ti-check"></i></span>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<!--<input class="check-form" type="text" placeholder="Prénom(s)*:">-->
+									{{ event_form.courriel|as_crispy_field }}
+									<span><i class="ti-check"></i></span>
+								</div>
+							</div>
+
+					</div>
+							<div class="row">
+									<div class="col-md-12">
+								<div class="form-group">
+									<!--<input class="check-form" type="text" placeholder="Email*:"> -->
+									{{ event_form.message|as_crispy_field }}
+									<span><i class="ti-check"></i></span>
+								</div>
+								<button type="submit" name="detail_event" class="site-btn sb-gradients mt-4">Soumettre</button>
+										<input type="hidden" value="{{evenement.id}}" name="eventId">
+
+							</div>
+
+				<!--	<div class="col-md-8 offset-md-4 ">
+						{% if messages %}
+							  {% for msg in messages %}
+
+        						  <div class="alert alert-{{msg.level_tag}} " role="alert" id="msg">
+									 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+									  </button>
+            							{{msg.message}}
+								  </div>
+
+					          {% endfor %}
+
+                    {% endif %}
+			</div>-->
+							</div>
+						</form>
+
+
 					{%endif%}
                 </div>
             </div>
 
 
 				</div>
-				<div class="col-lg-4 col-md-4 sideber pt-5 pt-lg-0">
-					<!--<div class="widget-area">
+				<!--<div class="col-lg-4 col-md-4 sideber pt-5 pt-lg-0">
+					<div class="widget-area">
 						<h4 class="widget-title">NewsLetter</h4>
 						<p>Souscrivez et recevez les dernières news.</p>
 						<form class="widget-subscribe-from">
 							<input type="text" placeholder="Votre email">
 							<button class="site-btn sb-full-- sb-gradients">Souscrire</button>
 						</form>
-					</div>-->
+					</div>
 					<div class="widget-area">
 						<div class="widget">
 							<h4 class="widget-title">Catégories</h4>
@@ -118,7 +207,7 @@ Evènement de l'Association
 							</div>
 						</div>
 					</div>
-				</div>
+				</div>-->
 			</div>
 		</div>
 	</section>

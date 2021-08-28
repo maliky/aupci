@@ -12,17 +12,12 @@ Association des utilisateurs du python
 				<div class="col-md-4 ">
 					<div class="blog-item">
 						<figure class="blog-thumb">
-							<img src="{%static 'img/blog/6.jpg' %}" alt="">
+							<img src="{{evenement.image_evenement.url}}" alt="" class="">
 						</figure>
 						<div class="blog-text">
-							<div class="post-date">23 au 25 août 2021</div>
-							<h4 class="blog-title align-items-center"><a href="single-blog.html">Bootcamp Python</a></h4>
-							<button class="site-btn sb-full-- sb-gradients">S'inscrire</button>
-							<div class="post-meta">
-								<a href=""><i class="fa fa-map-marker"></i> LARIT</a>
-								<a href=""><i class="fa fa-clock-o"></i> 08h00 - 12h00</a>
-								<a href=""><i class="fa fa-ticket"></i> 30 Places</a>
-							</div>
+							<div class="post-date">{{evenement.date_debut}}</div>
+							<h4 class="blog-title align-items-center"><a href="{% url  'aup_ci:venir_event_show' event_id=evenement.id %}">{{evenement.titre}}</a></h4>
+							<div align="center"><a href="{% url  'aup_ci:venir_event_show' event_id=evenement.id %}" class="site-btn sb-gradients sbg-line mt-5">Détails</a></div>
 						</div>
 					</div>
 
@@ -182,14 +177,14 @@ Association des utilisateurs du python
 	</section>
 	<!-- Process section end -->
 	<!-- Blog section -->
-	<section class="blog-section spad">
+	<!--<section class="blog-section spad">
 		<div class="container">
 			<div class="section-title text-center">
 				<h2>Actualiatés</h2>
 				<p>Tout sur la vie associative.</p>
 			</div>
 			<div class="row">
-				<!-- blog item -->
+				 blog item
 				<div class="col-md-4">
 					<div class="blog-item">
 						<figure class="blog-thumb">
@@ -206,7 +201,7 @@ Association des utilisateurs du python
 						</div>
 					</div>
 				</div>
-				<!-- blog item -->
+				blog item
 				<div class="col-md-4">
 					<div class="blog-item">
 						<figure class="blog-thumb">
@@ -223,7 +218,7 @@ Association des utilisateurs du python
 						</div>
 					</div>
 				</div>
-				<!-- blog item -->
+				blog item
 				<div class="col-md-4">
 					<div class="blog-item">
 						<figure class="blog-thumb">
@@ -242,7 +237,10 @@ Association des utilisateurs du python
 				</div>
 			</div>
 		</div>
-	</section>
+	</section>-->
 	<!-- Blog section end -->
     {% include "aup_ci/equipe.html" %}
+{%block news %}
+{% include "aup_ci/newsletter.html" %}
+{% endblock news %}
   {% endblock content %}

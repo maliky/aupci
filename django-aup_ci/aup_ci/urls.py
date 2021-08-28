@@ -21,9 +21,10 @@ app_name = 'aup_ci'
 urlpatterns = [
     path('', views.home, name="home"),
     path('about', views.about, name="about"),
-    path('event', views.event, name="event"),
+    path('event/<int:page>', views.event, name="event"),
     path('event/avenir/<int:event_id>', views.show_event_Avenir, name="venir_event_show"),
     path('event/passe/<int:event_id>', views.show_event_Passer, name="passe_event_show"),
+    path('event/participant/', views.show_event_Passer, name="passe_event_show"),
     path('contact', views.contact, name="contact"),
     path('adhesion', views.adhesion, name="adhesion"),
     path('admin/', admin.site.urls),

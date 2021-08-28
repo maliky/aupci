@@ -914,6 +914,7 @@ ol {
 	text-align: center;
 	padding-top: 7px;
 	font-size: 18px;
+	text-decoration: none;
 }
 
 .social a:last-child {
@@ -934,6 +935,10 @@ ol {
 
 .social .twitter {
 	background: #49a7f3;
+}
+.social .youtube {
+	background: #fa3217;
+    color: white;
 }
 
 .footer-bottom {
@@ -2205,8 +2210,61 @@ body {
 }
 .ical.btn{font-size:12px;padding:1px 5px;-webkit-border-radius:3px;-moz-border-radius:3px;border-radius:3px}
 .scaleImg{
-    max-width:350px;
-    max-height:350px;
+    max-width:553px;
+    max-height:553px;
     width:auto;
     height:auto;
+}
+
+
+.social-menu {
+	display: flex;
+	list-style-type: none;
+}
+
+.social-menu i {
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	font-size: 25px;
+	margin-right: 10px;
+	transition: all 0.2s ease-in-out;
+	display: flex;
+	justify-content: center;
+}
+
+.social-menu i:before {
+	display: flex;
+	flex-flow: row nowrap;
+	align-items: center;
+}
+
+.social-menu a {
+	text-decoration: none;
+}
+
+.fa-facebook {
+	background: #4b6cd0;
+}
+
+.fa-linkedin {
+	background:#007bb6
+}
+
+.fa-twitter {
+	background:#00aced
+}
+
+.fa-instagram {
+	background:#3f729b
+}
+
+.fa-youtube {
+	background:#c4302b
+}
+
+.social-menu i:hover {
+	opacity: .7;
+	border-radius: 0;
 }
