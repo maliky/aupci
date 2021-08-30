@@ -10,9 +10,11 @@ Liens utiles utilisées lors du codes :
 - Newsletter : https://www.twilio.com/blog/build-email-newsletter-django-twilio-sendgrid
 - Model Relationship: https://www.remoteinning.com/blog/how-to-effectively-design-relations-between-your-django-models
 - Documentation django: https://docs.djangoproject.com/fr/3.2/topics/
+- General : https://python.doctor/
 - Form with bootstrap:
     1. https://simpleisbetterthancomplex.com/tutorial/2018/11/28/advanced-form-rendering-with-django-crispy-forms.html
     2. https://www.ordinarycoders.com/blog/article/render-a-django-form-with-bootstrap
+    3. https://github.com/django-crispy-forms/crispy-bootstrap5
 
 - app ou pages pour seminaires et conférences :
     1. https://framagit.org/manu/django-seminar/-/tree/master
@@ -33,6 +35,7 @@ Liens utiles utilisées lors du codes :
     6. https://stackoverflow.com/questions/35919059/how-do-i-add-custom-actions-to-a-change-model-form-in-django-admin
     7. https://buildmedia.readthedocs.org/media/pdf/django-admin-cookbook/latest/django-admin-cookbook.pdf
     8. https://simpleisbetterthancomplex.com/tutorial/2017/03/14/how-to-create-django-admin-list-actions.html
+    9. https://www.sankalpjonna.com/learn-django/how-to-override-the-save-method-in-your-django-models
 
 - flash messages:
     1. https://www.youtube.com/watch?v=ZEfm8kHMBkc
@@ -42,3 +45,6 @@ Liens utiles utilisées lors du codes :
 - Divers:
 
     1. https://github.com/gitaarik/django-admin-relation-links
+    2. https://zetcode.com/django/email/ & https://www.youtube.com/watch?v=gVSxeWpI0pk
+    3. http://arbcoms.com/store-management-system/?_ga=2.192633769.2071284048.1629493044-327047450.1629493044
+    4. https://efficientcoder.net/django-3-tutorial-and-crud-example-with-mysql-and-bootstrap/
