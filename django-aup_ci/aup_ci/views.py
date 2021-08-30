@@ -7,8 +7,9 @@ from django.utils import timezone
 from django.db import models
 from django.db.models import F, Q
 from .models import Evenement, Membre
-from .helpers import base_navigue_view
+from .helpers import base_navigue_view, alerte_admin
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from .util import send_process_mail
 
 def home(request):
    render_page = "aup_ci/index.html"
@@ -50,6 +51,9 @@ def event(request, page=1):
             # add flashmessages
             messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+
+            # Envoie de mail à l'administrateur
+            alerte_admin(new_form)
             # redirect to a new URL:
             return HttpResponseRedirect('/event/'+str(page))
 
@@ -133,7 +137,12 @@ def show_event_Avenir(request, event_id=0):
                     if other_form.is_valid():
                         # process the data in form.cleaned_data as required
                         # Envoyer un email à l'administrateur
-
+                        sujet = "PARTICIPATION_AUPCI A '{}' DE {} MOTIF{}".format(evenement.titre, other_form.cleaned_data["courriel"],
+                                                                  other_form.cleaned_data["motif"])
+                        html_contents = other_form.cleaned_data["message"]
+                        email = "aup_ci@gmail.com"
+                        # print(sujet, html_contents, email)
+                        send_process_mail(sujet, html_contents, email)
                         # add flashmessages
                         messages.add_message(request, messages.SUCCESS,
                                              "Votre demande de participation a été enregistrée et sera traitée")
@@ -150,7 +159,8 @@ def show_event_Avenir(request, event_id=0):
                         # add flashmessages
                         messages.add_message(request, messages.SUCCESS,
                                              "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
-                        # Envoie de mail à l'administrateur et au demander
+                        # Envoie de mail à l'administrateur
+                        alerte_admin(new_form)
                         # redirect to a new URL:
                         return HttpResponseRedirect('/event/avenir/'+str(event_id))
             else:
@@ -178,6 +188,12 @@ def contact(request):
             if contact_form.is_valid():
                 # process the data in form.cleaned_data as required
                 #Envoyer un mail
+                sujet = "CONTACT_AUPCI DE {} {}".format(contact_form.cleaned_data["nom"], contact_form.cleaned_data["prenoms"])
+                html_contents = contact_form.cleaned_data["message"]
+                email = "aup_ci@gmail.com"
+                #print(sujet, html_contents, email)
+                send_process_mail(sujet, html_contents, email)
+                #exit(0)
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
                                      "Votre préoccupation a été enregistrée et sera traitée rapidement")
@@ -194,6 +210,9 @@ def contact(request):
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
+
+                # Envoie de mail à l'administrateur
+                alerte_admin(new_form)
                 # redirect to a new URL:
                 return HttpResponseRedirect('/contact')
 
@@ -220,6 +239,12 @@ def adhesion(request):
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'adhesion a été enregistrée et sera traitée")
+                # Message de signalement de nouvel adhérent
+                sujet = "NOUVELLE DEMANDE_ADHESION_AUPCI DE {} {} {}, ".format(adhere_form.cleaned_data["nom"],
+                                                          adhere_form.cleaned_data["prenoms"], adhere_form.cleaned_data["courriel"])
+                html_contents = " Une nouvelle demande d'adhesion est enregistrée"
+                email = "aup.ci@gmail.com"
+                send_process_mail(sujet, html_contents, email)
                 # redirect to a new URL:
                 return HttpResponseRedirect('/adhesion')
         elif "abonne" in request.POST:
@@ -233,7 +258,8 @@ def adhesion(request):
                 # add flashmessages
                 messages.add_message(request, messages.SUCCESS,
                                      "Votre demande d'abonnement à notre newsletter a été enregistrée et sera traitée")
-                # Envoie de mail à l'administrateur et au demander
+                # Envoie de mail à l'administrateur
+                alerte_admin(new_form)
                 # redirect to a new URL:
                 return HttpResponseRedirect('/adhesion')
 
@@ -242,4 +268,6 @@ def adhesion(request):
         adhere_form = AdhesionForm(None)
         new_form = AbonneNewForm(None)
     return render(request, "aup_ci/adhesion.html", {'adhereform': adhere_form, 'newform': new_form})
+
+
 

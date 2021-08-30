@@ -24,7 +24,19 @@ Liens utiles utilisées lors du codes :
 - Paginator:
     1. https://simpleisbetterthancomplex.com/tutorial/2016/08/03/how-to-paginate-with-django.html
 
+- Custom Admin:
+    1. https://www.youtube.com/watch?v=nR-12YbcXPw&list=PLncx5IhrlqK_RIKpxDeoBtyihA1e85OLa&index=13
+    2. https://pythonrepo.com/repo/MaistrenkoAnton-django-material-admin-python-administrative-interfaces
+    3. https://realpython.com/customize-django-admin-python/
+    4. https://www.willandskill.se/en/custom-django-admin-actions-with-an-intermediate-page/
+    5. https://books.agiliq.com/projects/django-admin-cookbook/en/latest/
+    6. https://stackoverflow.com/questions/35919059/how-do-i-add-custom-actions-to-a-change-model-form-in-django-admin
+    7. https://buildmedia.readthedocs.org/media/pdf/django-admin-cookbook/latest/django-admin-cookbook.pdf
+    8. https://simpleisbetterthancomplex.com/tutorial/2017/03/14/how-to-create-django-admin-list-actions.html
 
+- flash messages:
+    1. https://www.youtube.com/watch?v=ZEfm8kHMBkc
+    2. timeout de javascript
 
 
 

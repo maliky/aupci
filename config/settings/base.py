@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+#from django.contrib import  admin
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +21,7 @@ MEDIA_ROOT = BASE_DIR /'media'
 MEDIA_URL = '/media/'
 #STATIC_ROOT = os.path.join(BASE_DIR, "django-aup_ci", "static")
 STATIC_ROOT = os.path.join(BASE_DIR,  "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "site_static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "static")]
 #STATICFILES_DIRS = []
 #STATICFILES_DIRS = (
   #  os.path.join(BASE_DIR, "django-aup_ci/static"),
