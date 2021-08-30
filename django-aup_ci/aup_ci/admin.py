@@ -25,6 +25,7 @@ class DemandeAdhesionAdmin(admin.ModelAdmin):
     list_display = ("nom", "prenoms", "courriel", "traiter", "confirme_adhesion")
     #list_display = ("nom", "prenoms", "courriel", "traiter", "is_confirmed")
     readonly_fields = ("traiter", "confirme_adhesion")
+    list_filter = ("date_creation",)
 
     def get_ordering(self, request):
         return ['traiter']
@@ -85,6 +86,8 @@ class AbonneNewAdmin(admin.ModelAdmin):
 class MembreAdmin(admin.ModelAdmin):
     model = Membre
     list_display = ("nom","prenoms", "courriel", "role", "profession")
+    list_filter = ("role",)
+    #search_fields = ("role",)
 
     def nom(self, obj):
         adherant = obj.demande
@@ -108,10 +111,10 @@ class MembreAdmin(admin.ModelAdmin):
     courriel.short_description = "courriel"
     profession.short_description = "profession"
 
-    nom.admin_order_field = 'nom'
+    #nom.admin_order_field = 'nom'
 
-    #def get_ordering(self, request):
-        #return ['demande', 'role']
+    def get_ordering(self, request):
+        return ['demande', 'role']
 
 
 
@@ -129,6 +132,7 @@ class MembreAdmin(admin.ModelAdmin):
 class EvenementAdmin(admin.ModelAdmin):
     model = Evenement
     list_display = ("titre", "date_debut", "date_fin")
+    list_filter = ("type_evenement", "date_creation", "date_debut")
     def get_ordering(self, request):
         return ['-date_debut']
 
