@@ -45,7 +45,7 @@ class Membre(models.Model):
     date_adhesion = models.DateTimeField()
 
     def __str__(self):
-        return '{} {}; courriel={}; role= {}'.format(self.demande.nom, self.demande.prenoms, self.demande.courriel, self.role)
+        return '{} {}; courriel={}; role= {}'.format(self.demande.nom, self.demande.prenoms, self.demande.courriel, self.role, self.demande.profession)
 
 
 class TypeEvenement(models.Model):

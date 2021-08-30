@@ -3,6 +3,11 @@ from .models import  DemandeAdhesion, Membre, Evenement, AbonneNew, Newsletter, 
 from django import forms
 from .util import setting_send
 from django.db.models.functions import Lower
+from import_export.admin import ImportExportModelAdmin
+from .resources import MembreResource
+
+from .models import Membre
+
 
 #admin.site.site_header = "AUP-CI ADMIN"
 
@@ -83,8 +88,10 @@ class AbonneNewAdmin(admin.ModelAdmin):
     accepter_demande.short_description = "Accepter demande(s)"
 
 
-class MembreAdmin(admin.ModelAdmin):
+
+class MembreAdmin(ImportExportModelAdmin):
     model = Membre
+    resource_class = MembreResource
     list_display = ("nom","prenoms", "courriel", "role", "profession")
     list_filter = ("role",)
     #search_fields = ("role",)
@@ -124,8 +131,6 @@ class MembreAdmin(admin.ModelAdmin):
     def get_ordering(self, request):
         return ['demande', 'role']
 
-
-
     def formfield_for_dbfield(self, db_field, request, **kwargs):
         #user = kwargs['request'].user
         #print("DB_FIELD", db_field)
@@ -141,6 +146,8 @@ class MembreAdmin(admin.ModelAdmin):
         return super(MembreAdmin, self).formfield_for_dbfield(db_field, request, **kwargs)
 
 
+
+
 class EvenementAdmin(admin.ModelAdmin):
     model = Evenement
     list_display = ("titre", "date_debut", "date_fin")
@@ -153,6 +160,8 @@ class TypeEvenementAdmin(admin.ModelAdmin):
     list_display = ("nom",)
     def get_ordering(self, request):
         return ['nom']
+
+
 
 
 

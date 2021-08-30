@@ -42,10 +42,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crispy_forms',
+    'import_export',
     #'aup_ci',
     #'config'
     'django-aup_ci.aup_ci',
 ]
+
+IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
