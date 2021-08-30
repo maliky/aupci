@@ -19,6 +19,7 @@ class DemandeAdhesion(TimestampUseModel):
     courriel = models.EmailField(unique=True, max_length=255)
     traiter = models.BooleanField(default=False)
     confirme_adhesion = models.BooleanField(default=False)
+    est_associe = models.BooleanField(blank=True, default=False)
 
     def __str__(self):
         return '{} {} <{}>'.format(self.prenoms, self.nom, self.courriel)

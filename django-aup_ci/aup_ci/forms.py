@@ -11,7 +11,7 @@ class ContactForm(forms.Form):
 
 
 class ParticiperForm(forms.Form):
-    choix = [("sp", "Simple participant"), ("pt", "Présentateur"), ("cr", "Compétiteur à Hackathon"), ("pe", "Partenaire, sponsor"), ("ar", "Annonceur")]
+    choix = [("pa", "Participant"), ("pt", "Présentateur"), ("cr", "Compétiteur à Hackathon"), ("pe", "Partenaire, sponsor"), ("ar", "Annonceur")]
     motif = forms.ChoiceField(label="Participer en qualité de* :", choices=choix, required=True)
 
     #forms.CharField(label='', widget=forms.TextInput(attrs={'placeholder': 'Nom*', 'class': 'check-form'}))

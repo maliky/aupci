@@ -22,9 +22,9 @@ class NewsletterAdmin(admin.ModelAdmin):
 class DemandeAdhesionAdmin(admin.ModelAdmin):
     model = DemandeAdhesion
     actions = ["accepter_demande", "refuser_demande"]
-    list_display = ("nom", "prenoms", "courriel", "traiter", "confirme_adhesion")
+    list_display = ("nom", "prenoms", "courriel", "traiter", "confirme_adhesion", "est_associe")
     #list_display = ("nom", "prenoms", "courriel", "traiter", "is_confirmed")
-    readonly_fields = ("traiter", "confirme_adhesion")
+    readonly_fields = ("traiter", "confirme_adhesion", "est_associe")
     list_filter = ("date_creation",)
 
     def get_ordering(self, request):
@@ -89,6 +89,14 @@ class MembreAdmin(admin.ModelAdmin):
     list_filter = ("role",)
     #search_fields = ("role",)
 
+    def save_model(self, request, obj, form, change):
+        demande = obj.demande
+        print(demande)
+        #exit(0)
+        demande.est_associe = True
+        #obj.added_by = request.user
+        super().save_model(request, obj, form, change)
+
     def nom(self, obj):
         adherant = obj.demande
         return adherant.nom
@@ -123,8 +131,12 @@ class MembreAdmin(admin.ModelAdmin):
         #print("DB_FIELD", db_field)
         if db_field.name == "demande":
             #kwargs['initial'] = user.default_company
-            qs = DemandeAdhesion.objects.filter(confirme_adhesion=True)
+
+            qs = DemandeAdhesion.objects.filter(est_associe=False, confirme_adhesion=True)
             print("qs", qs)
+            print("DEMANDES")
+            for q in DemandeAdhesion.objects.all():
+                print(q, q.est_associe, q.confirme_adhesion)
             return forms.ModelChoiceField(queryset=qs, **kwargs)
         return super(MembreAdmin, self).formfield_for_dbfield(db_field, request, **kwargs)
 
