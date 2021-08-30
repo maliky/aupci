@@ -3,12 +3,12 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+ALLOWED_HOSTS = ["127.0.0.1", "localhost", "wwww.aup.ci"]
 
 # Application definition
 
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+#CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # MIDDLEWARE
 
@@ -21,3 +21,16 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+INTERNAL_IPS=['www.aup.ci']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'aupci_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'aupci2021',
+        'HOST': 'www.aup.ci',
+        'PORT': '5432',
+    }
+}

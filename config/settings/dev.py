@@ -42,3 +42,14 @@ MIDDLEWARE = [
 ALLOWED_HOSTS = []
 
 INTERNAL_IPS=['127.0.0.1']
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'aupci_DB',
+        'USER': 'postgres',
+        'PASSWORD': 'Ferdi',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
+    }
+}
