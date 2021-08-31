@@ -39,17 +39,28 @@ MIDDLEWARE = [
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["aup.ci", "localhost"]
 
 INTERNAL_IPS=['127.0.0.1']
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aupci_DB',
-        'USER': 'postgres',
-        'PASSWORD': 'Ferdi',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'aupci_DB',
+#         'USER': 'postgres',
+#         'PASSWORD': 'Ferdi',
+#         'HOST': '127.0.0.1',
+#         'PORT': '5432',
+#     }
+# }
+
+# EAMIL SETTINGS
+
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="mail.aup.ci"
+EMAIL_HOST_USER="contact@aup.ci"
+EMAIL_HOST_PASSWORD="Amour1>Uranus1>Pied"
+EMAIL_PORT=587  #587
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+

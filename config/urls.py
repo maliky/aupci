@@ -24,10 +24,10 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
 #BASE_DIR = Path(__file__).resolve().parent.parent
-#BASE_DIR = BASE_DIR/'django-aup_ci'
+#BASE_DIR = BASE_DIR/'django_aup_ci'
 
 urlpatterns = [
-    path('', include("django-aup_ci.aup_ci.urls")),
+    path('', include("django_aup_ci.aup_ci.urls")),
     path('admin/', admin.site.urls),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

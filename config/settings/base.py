@@ -19,12 +19,12 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 MEDIA_ROOT = BASE_DIR /'media'
 MEDIA_URL = '/media/'
-#STATIC_ROOT = os.path.join(BASE_DIR, "django-aup_ci", "static")
+#STATIC_ROOT = os.path.join(BASE_DIR, "django_aup_ci", "static")
 STATIC_ROOT = os.path.join(BASE_DIR,  "static")
-STATICFILES_DIRS = [os.path.join(BASE_DIR, "django-aup_ci", "static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "django_aup_ci", "static")]
 #STATICFILES_DIRS = []
 #STATICFILES_DIRS = (
-  #  os.path.join(BASE_DIR, "django-aup_ci/static"),
+  #  os.path.join(BASE_DIR, "django_aup_ci/static"),
 #)
 
 
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     #'aup_ci',
     #'config'
-    'django-aup_ci.aup_ci',
+    'django_aup_ci.aup_ci',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, "django-aup_ci", "templates")],
+        'DIRS': [os.path.join(BASE_DIR, "django_aup_ci", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -74,12 +74,12 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
+DATABASES = {
+   'default': {
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': BASE_DIR / 'db.sqlite3',
+   }
+}
 
 
 # Password validation

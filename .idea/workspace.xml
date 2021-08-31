@@ -38,21 +38,21 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/django-aup_ci/templates/aup_ci" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/django_aup_ci/templates/aup_ci" />
     <property name="settings.editor.selected.configurable" value="web.server" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\admin" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\templates\admin" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\site_static\img\member" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\templates\aup_ci" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\templates" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates\aup_ci" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\site_static\img\member" />
-      <recent name="D:\My_Django_Projects\aup_ci_repository\django-aup_ci\templates" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\templates\aup_ci" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\site_static\img\member" />
+      <recent name="D:\My_Django_Projects\aup_ci_repository\django_aup_ci\templates" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config\settings" />
       <recent name="D:\My_Django_Projects\aup_ci_repository\config" />
     </key>
