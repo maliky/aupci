@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Qui sommes-nous?
+{% endblock title %}
+
+{% block varheader %}
+	<!-- Page info section -->
+	<section class="page-info-section">
+		<div class="container">
+			<h2>NOUS</h2>
+			<div class="site-beradcamb">
+				<a href="index.html">Accueil</a>
+				<span><i class="fa fa-angle-right"></i> qui sommes-nous</span>
+			</div>
+		</div>
+	</section>
+	<!-- Page info end -->
+{% endblock varheader %}
+
+{% block content %}
+
+	<!-- About section -->
+	<section class="about-section spad">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-6 offset-lg-6">
+						{% if messages %}
+							  {% for msg in messages %}
+
+        						  <div class="alert alert-{{msg.level_tag}} " role="alert" id="msg">
+									 <!-- <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+									  </button>-->
+            							{{msg.message}}
+								  </div>
+
+					          {% endfor %}
+
+                    {% endif %}
+
+				</div>
+		</div>
+			<div class="row">
+				<div class="col-lg-6 offset-lg-6 about-text">
+					<h2>L'AUP en Bref</h2>
+					<h5> Vulgarisons le language Python en Côte d'Ivoire</h5>
+					<p>  L’« A.U.P» , Association des Utilisateurs du Python,
+						fondée le 08 juillet 2021, a pour but la vulgarisation du langage de programmation python et de ses applications en Côte d'Ivoire.
+						A cet effet, elle organise regulièrement des activités telle que les hackatons, des meetups, des pycons, etc.
+						Ces activités sont le lieu d'échanges entre dévéloppeurs.
+					</p>
+					<a href="{% url 'aup_ci:adhesion' %}" class="site-btn sb-gradients sbg-line mt-5">Adhérer à la communauté</a>
+				</div>
+			</div>
+			<div class="about-img">
+				<img src="{% static 'img/about-img2.png' %}" alt="">
+			</div>
+		</div>
+	</section>
+	<!-- About section end -->
+    {% include "aup_ci/equipe.html" %}
+{%block news %}
+{% include "aup_ci/newsletter.html" %}
+{% endblock news %}
+  {% endblock content %}

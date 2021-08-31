@@ -1,0 +1,154 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>AUP |{% block title %} A définir{% endblock title %}</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Cryptocurrency Landing Page Template">
+	<meta name="keywords" content="cryptocurrency, unica, creative, html">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Favicon -->
+	<link  href="{%static 'img/favicon.png' %}" rel="shortcut icon"/>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="{%static 'css/bootstrap.min.css' %}"/>
+	<!--<link rel="stylesheet" href="{%static 'css/font-awesome.min.css' %}"/>-->
+	<link rel="stylesheet" href="{%static  'css/themify-icons.css' %}"/>
+	<link rel="stylesheet" href="{%static 'css/animate.css' %}"/>
+	<link rel="stylesheet" href="{%static  'css/owl.carousel.css' %}"/>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{%static  'css/style.css' %}"/>
+
+
+
+	<!--[if lt IE 9]>
+	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+</head>
+<body>
+	<!-- Page Preloder -->
+	<div id="preloder">
+		<div class="loader"></div>
+	</div>
+
+	<!-- Header section -->
+	<header class="header-section clearfix">
+		<div class="container-fluid">
+			<a href="{% url 'aup_ci:home' %}" class="site-logo">
+				<img src="{%static 'img/logo1.png' %}" alt="">
+			</a>
+			<div class="responsive-bar"><i class="fa fa-bars"></i></div>
+			<a href="" class="user"><i class="fa fa-user"></i></a>
+			<a href="{% url 'aup_ci:adhesion' %}" class="site-btn">Adhésion</a>
+			<nav class="main-menu">
+				<ul class="menu-list">
+					<li><a href="{% url 'aup_ci:home' %}">Accueil</a></li>
+					<li><a href="{% url 'aup_ci:event' page=1 %}">Evènement</a></li>
+					<li><a href="{% url 'aup_ci:about' %}">Qui Sommes-Nous</a></li>
+					<li><a href="{% url 'aup_ci:contact' %}">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+	<!-- Header section end -->
+{% block varheader %}
+    partie de l'entête qui varie à définir par les pages filles
+
+    {% endblock varheader %}
+
+
+{% block content %}
+  grand contenu à definir par les pages filles
+	{%block news %}
+
+	{% endblock news %}
+  {% endblock content %}
+
+
+
+
+
+	<!-- Footer section -->
+	<footer class="footer-section">
+		<div class="container">
+			<div class="row spad">
+				<div class="col-md-6 col-lg-3 footer-widget">
+					<img src="{%static 'img/logo.png' %}" class="mb-4" alt="">
+					<p>Association des Utilisateurs du Python.</p>
+					<span><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés | by <a href="#" target="_blank">aup.ci-dev</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></span>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Lien utiles</h5>
+					<ul>
+						<li><a href="{% url 'aup_ci:home'  %}">Accueil</a></li>
+						<li><a href="{% url 'aup_ci:event' page=1 %}">Evènement</a></li>
+						<li><a href="{% url 'aup_ci:about'  %}">Qui-sommes nous</a></li>
+						<li><a href="{% url 'aup_ci:contact'  %}">Contact</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-2 offset-lg-1 footer-widget">
+					<h5 class="widget-title">Liens externes</h5>
+					<ul>
+						<li><a href="https://www.afpy.org/" target="_blank">Association Francophone Python (AFPy)</a></li>
+						<li><a href="https://www.pycon.fr/" target="_blank">PyCon Fr</a></li>
+						<li><a href="https://www.python.org/psf-landing/" target="_blank">Python Software Foudation</a></li>
+						<li><a href="https://docs.python.org/fr/3/" target="_blank">Documentation Python en français</a></li>
+						<li><a href="https://www.regionsjob.com/offre/developpeur-python" target="_blank">Opportunités</a></li>
+					</ul>
+				</div>
+				<div class="col-md-6 col-lg-3 footer-widget pl-lg-5 pl-3">
+					<h5 class="widget-title">Suivez-Nous</h5>
+					<div class="social-menu">
+						<!--<a href="" class="facebook"><i class="fab fa-facebook"></i></a>
+						<a href="" class="twitter"><i class="fab fa-twitter"></i></a>
+						<a href="" class="youtube"><i class="fab fa-youtube"></i></a>-->
+						<li><a href="https://www.facebook.com/profile.php?id=100071941734130" target="_blank"><i class="fab fa-facebook"></i></a></li>
+
+<li><a href="https://twitter.com/ci_aup?s=21" target="_blank"><i class="fab fa-twitter"></i></a></li>
+<li><a href="https://www.youtube.com/channel/UCXspDuv30oyrZEeAoWGG7Kg" target="_blank"><i class="fab fa-youtube"></i></a></li>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="row">
+					<div class="col-lg-4 store-links text-center text-lg-left pb-3 pb-lg-0">
+
+					</div>
+					<div class="col-lg-8 text-center text-lg-right">
+						<ul class="footer-nav">
+
+							<li><a href="">Mentions Légales</a></li>
+							<li><a href="">Politique générale </a></li>
+							<li><a href="">contact@aup.ci</a></li>
+							<li><a href="">(+225) 0779874590</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!--====== Javascripts & Jquery ======-->
+	<script src="{%static  'js/jquery-3.2.1.min.js' %}"></script>
+	<script src="{%static  'js/owl.carousel.min.js' %}"></script>
+	<script src="{%static   'js/main.js' %}"></script>
+    <script>
+
+		setTimeout(function () {
+			if ($('#msg').length>0){
+				$('#msg').remove();
+			}
+
+		}, 5000)
+	</script>
+</body>
+</html>
